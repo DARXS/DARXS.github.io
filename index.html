@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Danilo Adryel | Engenheiro Eletrônico</title>
+    <meta name="description" content="Portfólio profissional de Danilo Adryel Rodrigues Xavier Silva, especialista em sistemas embarcados e desenvolvimento automotivo">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --secondary: #4b5563;
+            --accent: #fbbf24;
+            --bg-light: #f9fafb;
+            --text-dark: #1f2937;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background-color: var(--primary);
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .timeline-container {
+            border-left: 2px solid var(--primary);
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            position: absolute;
+            left: -9px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.25rem;
+            background-color: #e5e7eb;
+            color: var(--text-dark);
+            margin: 0.25rem;
+        }
+        
+        @media print {
+            .page-break {
+                page-break-before: avoid;
+            }
+            
+            section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-32 h-32 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden mb-4 md:mb-0 md:mr-6">
+                    <i class="fas fa-user-tie text-5xl text-gray-500"></i>
+                </div>
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl font-bold text-gray-800">Danilo Adryel Rodrigues Xavier Silva</h1>
+                    <h2 class="text-xl text-blue-600 font-medium mt-1">Engenheiro Eletrônico em Formação</h2>
+                    <p class="text-gray-600 mt-1">Especialista em Sistemas Embarcados, Eletrônica Automotiva e Análise de Dados</p>
+                    <div class="flex flex-wrap justify-center md:justify-start mt-2">
+                        <span class="inline-flex items-center px-2 py-1 mr-2 mb-2 text-sm font-medium rounded bg-blue-100 text-blue-800">
+                            <i class="fas fa-map-marker-alt mr-1"></i> Recife, PE
+                        </span>
+                        <span class="inline-flex items-center px-2 py-1 mr-2 mb-2 text-sm font-medium rounded bg-blue-100 text-blue-800">
+                            <i class="fas fa-graduation-cap mr-1"></i> UFPE
+                        </span>
+                        <span class="inline-flex items-center px-2 py-1 mr-2 mb-2 text-sm font-medium rounded bg-blue-100 text-blue-800">
+                            <i class="fas fa-building mr-1"></i> Stellantis
+                        </span>
+                        <span class="inline-flex items-center px-2 py-1 mr-2 mb-2 text-sm font-medium rounded bg-blue-100 text-blue-800">
+                            <i class="fas fa-language mr-1"></i> Português (Nativo)
+                        </span>
+                        <span class="inline-flex items-center px-2 py-1 mr-2 mb-2 text-sm font-medium rounded bg-blue-100 text-blue-800">
+                            <i class="fas fa-language mr-1"></i> Inglês (Intermediário)
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex mt-4 md:mt-0">
+                <a href="https://www.linkedin.com/in/daniloadryel/" target="_blank" class="text-blue-600 hover:text-blue-800 mx-2">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://github.com/DARXS" target="_blank" class="text-gray-700 hover:text-gray-900 mx-2">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="mailto:danilo.adryel.r.x.s@gmail.com" class="text-red-600 hover:text-red-800 mx-2">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Sobre Mim -->
+        <section id="about" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b pb-2">
+                <i class="fas fa-user mr-2"></i> Sobre Mim
+            </h2>
+            <p class="text-gray-700 leading-relaxed">
+                Sou estudante de Engenharia Eletrônica na Universidade Federal de Pernambuco (UFPE) e estagiário na Stellantis, na área de 
+                Planejamento e Controle da Manutenção (PCM). Sou ex-Coordenador da Equipe de Eletrônica no projeto Mangue Baja, 
+                onde atuei na liderança de desenvolvimento de sistemas embarcados avançados para veículos off-road, com foco em aquisição de dados, telemetria e controle embarcado.
+            </p>
+            <p class="text-gray-700 leading-relaxed mt-3">
+                Minha formação acadêmica e experiência profissional são focadas no desenvolvimento de sistemas embarcados de alta performance, 
+                desenvolvimento de circuitos eletrônicos, integração de sensores em ambientes industriais e automotivos, otimização de processos 
+                e análise de dados em tempo real. Busco me especializar no desenvolvimento de soluções inovadoras, aplicando princípios avançados de 
+                engenharia para enfrentar desafios complexos na área automotiva e industrial.
+            </p>
+            <div class="mt-4 flex flex-wrap">
+                <span class="badge bg-blue-100 text-blue-800">ESP32</span>
+                <span class="badge bg-blue-100 text-blue-800">STM32</span>
+                <span class="badge bg-blue-100 text-blue-800">Sistemas Embarcados</span>
+                <span class="badge bg-blue-100 text-blue-800">Eletrônica Automotiva</span>
+                <span class="badge bg-blue-100 text-blue-800">PCB Design</span>
+                <span class="badge bg-blue-100 text-blue-800">Análise de Dados</span>
+                <span class="badge bg-blue-100 text-blue-800">Power BI</span>
+                <span class="badge bg-blue-100 text-blue-800">C/C++</span>
+                <span class="badge bg-blue-100 text-blue-800">Python</span>
+                <span class="badge bg-blue-100 text-blue-800">MATLAB</span>
+            </div>
+        </section>
+
+        <!-- Experiência Profissional -->
+        <section id="experience" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b pb-2">
+                <i class="fas fa-briefcase mr-2"></i> Experiência Profissional
+            </h2>
+            
+            <div class="timeline-container mt-6 mb-6">
+                <div class="timeline-dot mt-1"></div>
+                <div class="pl-6">
+                    <h3 class="text-xl font-semibold text-gray-800">Estagiário de Manutenção (MPC)</h3>
+                    <div class="flex items-center text-gray-600 mb-2">
+                        <i class="fas fa-building mr-2"></i>
+                        <span class="font-medium">Stellantis</span>
+                        <span class="mx-2">|</span>
+                        <i class="far fa-calendar-alt mr-2"></i>
+                        <span>Janeiro 2024 - Presente</span>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700">
+                        <li>Suporte ao planejamento e controle de manutenção</li>
+                        <li>Gestão de ordens de serviço utilizando <strong>SAP PM</strong></li>
+                        <li>Monitoramento de KPIs (<strong>MTTR, MTBF</strong>)</li>
+                        <li>Análise de dados via <strong>Power BI</strong></li>
+                        <li>Monitoramento de gestão de ativos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-6 mb-6">
+                <div class="timeline-dot mt-1"></div>
+                <div class="pl-6">
+                    <h3 class="text-xl font-semibold text-gray-800">Coordenador de Eletrônica</h3>
+                    <div class="flex items-center text-gray-600 mb-2">
+                        <i class="fas fa-car mr-2"></i>
+                        <span class="font-medium">Projeto Mangue Baja</span>
+                        <span class="mx-2">|</span>
+                        <i class="far fa-calendar-alt mr-2"></i>
+                        <span>Abril 2024 - Presente</span>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700">
+                        <li>Gerenciamento de projetos e metodologias ágeis (<strong>SCRUM</strong>) para a equipe de eletrônica</li>
+                        <li>Foco em planejamento, execução e monitoramento de cronogramas</li>
+                        <li>Coordenação da equipe de desenvolvimento de sistemas embarcados</li>
+                        <li>Planejamento estratégico para implementações tecnológicas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-6">
+                <div class="timeline-dot mt-1"></div>
+                <div class="pl-6">
+                    <h3 class="text-xl font-semibold text-gray-800">Designer de Sistema Embarcado Automotivo</h3>
+                    <div class="flex items-center text-gray-600 mb-2">
+                        <i class="fas fa-car mr-2"></i>
+                        <span class="font-medium">Projeto Mangue Baja</span>
+                        <span class="mx-2">|</span>
+                        <i class="far fa-calendar-alt mr-2"></i>
+                        <span>Junho 2023 - Março 2024</span>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700">
+                        <li>Desenvolvimento de sistemas de chicotes elétricos para veículos off-road</li>
+                        <li>Otimização de telemetria via rádio por meio de ECU baseada em <strong>ESP32</strong> com <strong>LoRa</strong></li>
+                        <li>Aprimoramentos em equipamentos de teste integrando sensores de alta precisão</li>
+                        <li>Desenvolvimento de sistemas baseados em <strong>ESP32</strong> utilizando <strong>ESP-NOW</strong></li>
+                        <li>Design de circuitos, desenvolvimento de PCBs e integração de sensores</li>
+                        <li>Implementação de protocolos de comunicação (<strong>CAN, I2C, UART, SPI</strong>)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formação Acadêmica -->
+        <section id="education" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b pb-2">
+                <i class="fas fa-graduation-cap mr-2"></i> Formação Acadêmica
+            </h2>
+            
+            <div class="timeline-container mt-6 mb-6">
+                <div class="timeline-dot mt-1"></div>
+                <div class="pl-6">
+                    <h3 class="text-xl font-semibold text-gray-800">Bacharelado em Engenharia Eletrônica</h3>
+                    <div class="flex items-center text-gray-600 mb-2">
+                        <i class="fas fa-university mr-2"></i>
+                        <span class="font-medium">Universidade Federal de Pernambuco (UFPE)</span>
+                        <span class="mx-2">|</span>
+                        <i class="far fa-calendar-alt mr-2"></i>
+                        <span>Junho 2022 - Junho 2027 (Em Andamento)</span>
+                    </div>
+                    <p class="text-gray-700">
+                        Andamento na formaçõa em engenharia eletrônica, com foco em sistemas embarcados, processamento de sinais. 
+                        Desenvolvimento de projetos práticos e participação em iniciativas extracurriculares como a equipe Mangue Baja.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-6">
+                <div class="timeline-dot mt-1"></div>
+                <div class="pl-6">
+                    <h3 class="text-xl font-semibold text-gray-800">Ensino Médio Profissionalizante</h3>
+                    <div class="flex items-center text-gray-600 mb-2">
+                        <i class="fas fa-university mr-2"></i>
+                        <span class="font-medium">Instituto Federal de Pernambuco (IFPE)</span>
+                        <span class="mx-2">|</span>
+                        <i class="far fa-calendar-alt mr-2"></i>
+                        <span>Janeiro 2018 - Janeiro 2022 (Concluído)</span>
+                    </div>
+                    <p class="text-gray-700">
+                        Técnico em Meio Ambiente, com formação integrada ao ensino médio. Desenvolvimento de projetos voltados à sustentabilidade e gestão ambiental, 
+                        fundamental para o entendimento da aplicação de tecnologias em soluções de impacto ecológico.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades Técnicas -->
+        <section id="skills" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b pb-2">
+                <i class="fas fa-code mr-2"></i> Habilidades Técnicas
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Sistemas Embarcados</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-gray-700">Programação de microcontroladores (ESP32, STM32)</span>
+                            <span class="text-sm font-medium text-gray-700">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-gray-700">Desenvolvimento em C/C++</span>
+                            <span class="text-sm font-medium text-gray-700">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-gray-700">Protocolos de comunicação (ESP-NOW, LoRa, CAN, I2C, SPI, UART)</span>
+                            <span class="text-sm font-medium text-gray-700">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-gray-700">Telemetria e aquisição de dados</span>
+                            <span class="text-sm font-medium text-gray-700">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Hardware & Design</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-gray-700">Design de PCB (KiCad)</span>
+                            <span class="text-sm font-medium text-gray-700">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-gray-700">Desenvolvimento de circuitos eletrônicos</span>
+                            <span class="text-sm font-medium text-gray-700">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-gray-700">Integração de sensores</span>
+                            <span class="text-sm font-medium text-gray-700">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-gray-700">MATLAB/Simulink para modelagem</span>
+                            <span class="text-sm font-medium text-gray-700">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-xl font-semibold my-6 text-gray-800">Outras Habilidades</h3>
+            <div class="flex flex-wrap">
+                <span class="badge bg-blue-500 text-white">Python</span>                
+                <span class="badge bg-blue-500 text-white">Análise de Dados</span>
+                <span class="badge bg-blue-500 text-white">Power BI</span>
+                <span class="badge bg-blue-500 text-white">SAP PM</span>
+                <span class="badge bg-blue-500 text-white">Metodologias Ágeis</span>
+                <span class="badge bg-blue-500 text-white">SCRUM</span>
+                <span class="badge bg-blue-500 text-white">Gestão de Projetos</span>
+                <span class="badge bg-blue-500 text-white">Manutenção Industrial</span>
+                <span class="badge bg-blue-500 text-white">Eletrônica Automotiva</span>
+                <span class="badge bg-blue-500 text-white">Telemetria</span>
+                <span class="badge bg-blue-500 text-white">ECUs</span>
+                <span class="badge bg-blue-500 text-white">Programação de Baixo Nível</span>
+            </div>
+        </section>
+
+        <!-- Projetos -->
+        <section id="projects" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b pb-2">
+                <i class="fas fa-project-diagram mr-2"></i> Projetos Destacados
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Sistema de Telemetria para Veículos Off-Road</h3>
+                        <p class="text-gray-700 mb-3">
+                            Desenvolvimento de um sistema completo de telemetria para veículos off-road utilizando ESP32 com módulo LoRa para transmissão de dados em tempo real.
+                        </p>
+                        <div class="flex flex-wrap mb-3">
+                            <span class="badge bg-gray-200">ESP32</span>
+                            <span class="badge bg-gray-200">LoRa</span>
+                            <span class="badge bg-gray-200">C++</span>
+                            <span class="badge bg-gray-200">Telemetria</span>
+                            <span class="badge bg-gray-200">PCB Design</span>
+                        </div>
+                        <div class="text-blue-600 font-medium">
+                            <i class="fas fa-link mr-1"></i> Projeto Mangue Baja
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Otimização da Interface de Visualização e Análise de Dados</h3>
+                        <p class="text-gray-700 mb-3">
+                            Otimizei uma aplicação em Python para análise de desempenho em veículos do tipo BAJA. Utilizei bibliotecas como 
+                            Pandas, NumPy, SciPy e Matplotlib para manipulação, cálculo, filtragem e visualização de dados de sensores (CSV).
+                            Extrai métricas (velocidade, aceleração, relação RPM x Velocidade) e detecto anomalias, com uma interface em PyQt6
+                            e exportação de relatórios (CSV/PDF).
+                        </p>
+                        <div class="flex flex-wrap mb-3">
+                            <span class="badge bg-gray-200">ESP32</span>
+                            <span class="badge bg-gray-200">C/C++</span>
+                            <span class="badge bg-gray-200">Python</span>
+                            <span class="badge bg-gray-200">Sensores</span>
+                            <span class="badge bg-gray-200">CAN Bus</span>
+                            <span class="badge bg-gray-200">I2C</span>
+                            <span class="badge bg-gray-200">LoRa</span>
+                            <span class="badge bg-gray-200">Kicad</span>
+                        </div>
+                        <div class="text-blue-600 font-medium">
+                            <i class="fas fa-car mr-1"></i> Projeto Mangue Baja
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Otimização do Equipamento Para Testes De Dinâmica Longitudinal</h3>
+                        <p class="text-gray-700 mb-3">
+                            Otimizei o sistema de medição de aceleração e velocidade para veículo do tipo BAJA. Aprimorei habilidades na 
+                            integração de sensores ópticos com ESP32, utilizando ESP-NOWpara comunicação sem fio, aprofundando meu
+                            conhecimento em programação em C processamento de sinais.
+                        </p>
+                        <div class="flex flex-wrap mb-3">
+                            <span class="badge bg-gray-200">ESP32</span>
+                            <span class="badge bg-gray-200">ESP-NOW</span>
+                            <span class="badge bg-gray-200">Comunicação Sem Fio</span>
+                            <span class="badge bg-gray-200">C/C++</span>
+                            <span class="badge bg-gray-200">Kicad</span>
+                        </div>
+                        <div class="text-blue-600 font-medium">
+                            <i class="fas fa-car mr-1"></i> Projeto Mangue Baja
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Desenvolvimento de Chicote elétrico</h3>
+                        <p class="text-gray-700 mb-3">
+                            Desenvolvi habilidades no design, fabricação e manutenção de chicotes elétricos para um veículo Baja SAE, com
+                            foco na seleção de componentes, roteamento eficiente e conformidade com os padrões técnicos.
+                        </p>
+                        <div class="flex flex-wrap mb-3">
+                            <span class="badge bg-gray-200">Conectores Automotivos</span>
+                            <span class="badge bg-gray-200">Roteamento Confiável</span>
+                            <span class="badge bg-gray-200">Grau de Proteção IP67</span>
+                            <span class="badge bg-gray-200">Invólucros Impermeáveis</span>
+                        </div>
+                        <div class="text-blue-600 font-medium">
+                            <i class="fas fa-car mr-1"></i> Projeto Mangue Baja
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificações -->
+        <section id="certifications" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b pb-2">
+                <i class="fas fa-certificate mr-2"></i> Certificações
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Embedded Systems Programming: Getting Started</h3>
+                    <p class="text-gray-600 text-sm">Stellantis | Fevereiro 2025</p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Fundamentals of Lithium-Ion Battery Cells</h3>
+                    <p class="text-gray-600 text-sm">Stellantis | Fevereiro 2025</p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Foundations of Base Engine Calibration Methodology</h3>
+                    <p class="text-gray-600 text-sm">Stellantis | Janeiro 2025</p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Fundamentos para Análise de Dados</h3>
+                    <p class="text-gray-600 text-sm">Microsoft e LinkedIn | Janeiro 2025</p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">HIL Specialist 2.0 | Specialization program</h3>
+                    <p class="text-gray-600 text-sm">Typhoon HIL, Inc. | Janeiro 2025</p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Introduction to Advanced Automotive Batteries</h3>
+                    <p class="text-gray-600 text-sm">Stellantis | Janeiro 2025</p>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Propulsion System Controls Overview</h3>
+                    <p class="text-gray-600 text-sm">Stellantis | Janeiro 2025</p>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Matlab For Calibration Engineers - SKL-12801</h3>
+                    <p class="text-gray-600 text-sm">Stellantis | Janeiro 2025</p>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Powertrain Testing & Calibration - MEA PHEV / BEV Calibration Module - Initiation</h3>
+                    <p class="text-gray-600 text-sm">Stellantis | Janeiro 2025</p>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">MathWorks ONRAMP</h3>
+                    <p class="text-gray-600 text-sm">MathWorks | Janeiro 2025</p>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">MATLAB Desktop Tools and Troubleshooting Scripts</h3>
+                    <p class="text-gray-600 text-sm">MathWorks | Janeiro 2025</p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Torne-se Especialista em Microsoft Power BI</h3>
+                    <p class="text-gray-600 text-sm">LinkedIn | Janeiro 2025</p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Programa de Cursos Integrados Machine Learning</h3>
+                    <p class="text-gray-600 text-sm">DeepLearning.AI | Junho 2024</p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800">Data Science Methodology</h3>
+                    <p class="text-gray-600 text-sm">IBM | Maio 2024</p>
+                </div>
+            </div>
+        </section>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-bold">Danilo Adryel Rodrigues Xavier Silva</h2>
+                    <p class="text-gray-300">Engenheiro Eletrônico em Formação</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://www.linkedin.com/in/daniloadryel/" target="_blank" class="text-gray-300 hover:text-white">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://github.com/DARXS" target="_blank" class="text-gray-300 hover:text-white">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="mailto:danilo.adryel.r.x.s@gmail.com" class="text-gray-300 hover:text-white">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-4 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Danilo Adryel Rodrigues Xavier Silva. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adicionando animações para os cartões de projetos
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-5px)';
+                    card.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)';
+                });
+            });
+            
+            // Animação para barras de progresso
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.transition = 'width 1s ease-in-out';
+                    bar.style.width = width;
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
