@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfólio de Danilo Adryel — Serial Life Software Quality Analyst na Stellantis | Diagnósticos, Infotainment, Sistemas Embarcados C/C++, CAN/LIN">
-<title>DARXS // Danilo Adryel — Automotive Embedded Systems</title>
+<meta name="description" content="Danilo Adryel — In-Field Software Quality Analyst na Stellantis. Diagnóstico de ECUs (UDS/DoIP, CAN/LIN, HIL), análise de causa-raiz e firmware embarcado C/C++. Projetos open source no GitHub.">
+<title>DARXS // Danilo Adryel — Automotive Software Quality &amp; Embedded Systems</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1805,6 +1805,76 @@ body::after {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .btn { padding: 10px 18px; font-size: 12px; }
 }
+
+/* ═══ HERO REPOS + PROJETOS (repositórios) ═══ */
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.hero-repos { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; color: var(--text-3); }
+.hero-repos a { color: var(--cyan); text-decoration: none; border: 1px solid var(--border); padding: 4px 10px; border-radius: 2px; }
+.hero-repos a:hover { border-color: var(--cyan); }
+.proj-lead { max-width: 68ch; color: var(--text-2); font-size: 17px; margin: -6px 0 26px; }
+.gh-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; padding: 16px 20px; background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--cyan); border-radius: 4px; margin-bottom: 28px; }
+.gh-handle { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--text-1); text-decoration: none; }
+.gh-handle i { font-size: 26px; color: var(--cyan); }
+.gh-stat { font-family: var(--mono); font-size: 12px; color: var(--text-2); }
+.gh-stat b { color: var(--accent); font-size: 15px; }
+.gh-bar .btn { margin-left: auto; }
+.sysmap { background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 22px 24px; margin-bottom: 36px; }
+.sysmap-head { font-family: var(--display); font-weight: 700; font-size: 16px; margin-bottom: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; }
+.sysmap-head span { font-family: var(--mono); font-weight: 400; font-size: 11px; color: var(--text-3); }
+.flow { display: grid; grid-template-columns: 1.1fr .7fr 1.1fr 1fr; gap: 34px; }
+.flow-col { position: relative; display: flex; flex-direction: column; gap: 10px; }
+.flow-col.mid { justify-content: center; }
+.flow-col:not(:last-child)::after { content: '\f054'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; right: -23px; top: 50%; font-size: 12px; color: var(--accent); }
+.flow-title { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+.node { display: block; padding: 11px 14px; background: var(--bg-dark); border: 1px solid var(--border); border-radius: 3px; text-decoration: none; transition: border-color .2s; }
+a.node:hover { border-color: var(--accent); }
+.node b { display: block; font-family: var(--mono); font-size: 13px; color: var(--cyan); }
+.node span { font-size: 13px; color: var(--text-2); line-height: 1.4; }
+.node.bus { text-align: center; border-style: dashed; }
+.node.bus b { color: var(--accent); }
+.sysmap-foot { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-2); }
+.sysmap-foot a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(0,180,216,.4); }
+.pf-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.pf-chip { font-family: var(--mono); font-size: 12px; padding: 8px 14px; background: transparent; border: 1px solid var(--border); color: var(--text-2); border-radius: 2px; cursor: pointer; }
+.pf-chip:hover { color: var(--text-1); border-color: var(--text-3); }
+.pf-chip.active { border-color: var(--accent); color: var(--accent); background: rgba(255,107,0,.06); }
+.rp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 18px; margin-bottom: 18px; }
+.rp { background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 22px; display: flex; flex-direction: column; gap: 12px; scroll-margin-top: 150px; transition: border-color .2s; }
+.rp[hidden] { display: none; }
+.rp:hover { border-color: rgba(0,180,216,.4); }
+.rp.feat { border-top: 2px solid var(--accent); }
+.rp-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.rp-name { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12.5px; color: var(--cyan); text-decoration: none; word-break: break-all; }
+.rp-name:hover { text-decoration: underline; }
+.rp-year { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+.rp-title { font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.3; color: var(--text-1); }
+.rp-desc { font-size: 15px; line-height: 1.65; color: var(--text-2); }
+.rp-facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.rp-more summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; color: var(--accent); padding: 4px 0; }
+.rp-more summary::-webkit-details-marker { display: none; }
+.rp-more summary::before { content: '\f054'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 9px; transition: transform .2s; }
+.rp-more[open] summary::before { transform: rotate(90deg); }
+.rp-more ul { margin: 8px 0 2px; padding-left: 18px; display: grid; gap: 8px; }
+.rp-more li { font-size: 14px; line-height: 1.55; color: var(--text-2); }
+.rp-more li::marker { color: var(--accent); }
+.rp-foot { margin-top: auto; display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border); }
+.rp-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+.rp-meta span { display: inline-flex; align-items: center; gap: 5px; }
+.rp-btn { padding: 8px 14px; font-size: 12px; }
+.rp.flash { animation: rp-flash 1.4s ease; }
+@keyframes rp-flash { 0%, 60% { box-shadow: 0 0 0 2px var(--accent), var(--glow-o); } 100% { box-shadow: none; } }
+.rp-slim { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 12px; }
+.rp-slim a { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; align-items: center; padding: 12px 16px; border: 1px solid var(--border); border-radius: 4px; text-decoration: none; background: var(--bg-card); }
+.rp-slim a:hover { border-color: rgba(0,180,216,.4); }
+.rp-slim i.fab { grid-row: span 2; font-size: 20px; color: var(--text-3); }
+.rp-slim b { font-family: var(--mono); font-size: 13px; color: var(--cyan); }
+.rp-slim span { font-size: 13px; color: var(--text-2); }
+@media (max-width: 900px) {
+  .flow { grid-template-columns: 1fr; gap: 34px; }
+  .flow-col:not(:last-child)::after { content: '\f078'; right: auto; left: 50%; top: auto; bottom: -26px; }
+  .gh-bar .btn { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .rp.flash { animation: none; outline: 2px solid var(--accent); } }
 </style>
 </head>
 <body>
@@ -1846,7 +1916,7 @@ body::after {
     <i class="fas fa-briefcase"></i> Experiência
   </button>
   <button class="tab-btn" data-tab="projects" onclick="switchTab('projects')">
-    <i class="fas fa-microchip"></i> Projetos
+    <i class="fab fa-github"></i> Projetos
   </button>
   <button class="tab-btn" data-tab="skills" onclick="switchTab('skills')">
     <i class="fas fa-code"></i> Skills
@@ -1884,32 +1954,43 @@ body::after {
       <div class="container">
         <div class="hero-grid">
           <div class="hero-left">
-            <div class="hero-eyebrow">Product Analyst 2 - ACT Digital / Serial Life Software Quality Analyst — Stellantis</div>
+            <div class="hero-eyebrow">In-Field Software Quality Analyst · ACT Digital @ Stellantis South America</div>
             <h1 class="hero-name">
               Danilo<br><span class="accent">Adryel</span>
             </h1>
-            <div class="hero-role">Software Quality & Embedded Systems Engineer</div>
+            <div class="hero-role">Automotive Software Quality · ECU Diagnostics · Embedded C/C++</div>
             <div class="hero-company">
               <div class="status-dot"></div>
               Stellantis South America · Betim, MG
             </div>
             <p class="hero-desc">
-              Engenheiro Eletrônico, em formação, com expertise em diagnósticos automotivos, infotainment, sistemas embarcados C/C++, protocolos CAN/LIN e análise avançada de falhas em sistemas pós-produção.
+              Investigo falhas de software automotivo em campo, rastreio até a causa-raiz e acompanho a ação corretiva até a produção seriada. Hoje cuido da qualidade de campo de áudio e antena; antes, de diagnóstico de ECUs multicore. Base em firmware C/C++ e dados com Python e Power BI.
             </p>
             <div class="hero-tags">
               <span class="tag"><i class="fas fa-car"></i> Automotive ECU</span>
               <span class="tag"><i class="fas fa-microchip"></i> Embedded C/C++</span>
               <span class="tag"><i class="fas fa-network-wired"></i> CAN / LIN</span>
-              <span class="tag tag-green"><i class="fas fa-broadcast-tower"></i> FOTA / OTA</span>
-              <span class="tag tag-cyan"><i class="fas fa-stethoscope"></i> Diagnostics</span>
+              <span class="tag tag-green"><i class="fas fa-stethoscope"></i> UDS / DoIP</span>
+              <span class="tag tag-cyan"><i class="fas fa-broadcast-tower"></i> HIL · OTA</span>
             </div>
             <div class="hero-actions">
-              <button class="btn btn-primary" onclick="switchTab('contact')">
-                <i class="fas fa-satellite-dish"></i> Entrar em Contato
+              <button class="btn btn-primary" onclick="switchTab('projects')">
+                <i class="fab fa-github"></i> Ver Projetos
+              </button>
+              <button class="btn btn-outline" onclick="switchTab('contact')">
+                <i class="fas fa-satellite-dish"></i> Contato
               </button>
               <a href="Danilo_Adryel_CV.pdf" class="btn btn-outline" download>
                 <i class="fas fa-download"></i> Download CV
               </a>
+            </div>
+            <div class="hero-repos">
+              <span>No GitHub:</span>
+              <a href="https://github.com/DARXS/iLogger" target="_blank" rel="noopener">iLogger</a>
+              <a href="https://github.com/DARXS/MangueBaja_MPU-25" target="_blank" rel="noopener">MPU-25</a>
+              <a href="https://github.com/DARXS/AV-Test" target="_blank" rel="noopener">AV-Test</a>
+              <a href="https://github.com/DARXS/MangueBaja_SCU-24" target="_blank" rel="noopener">SCU-24</a>
+              <a href="#" onclick="switchTab('projects'); return false;">todos os 9 →</a>
             </div>
             <div class="hero-social" style="margin-top:24px;">
               <a href="https://linkedin.com/in/daniloadryel" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
@@ -1948,9 +2029,9 @@ body::after {
 
         <div class="about-grid">
           <div class="about-text">
-            <p>Sou <strong>Engenheiro Eletrônico em formação</strong> com forte experiência prática em <strong>desenvolvimento de software embarcado em C/C++</strong>, focado em engenharia automotiva — integrando software, hardware e qualidade para entregar sistemas de alto impacto e criticamente seguros.</p>
-            <p>Minha expertise concentra-se em ECUs, infotainment e conectividade veicular, integração hardware-software, protocolos <strong>CAN e LIN</strong>, diagnósticos avançados, validação e teste de software e <strong>análise de falhas em ambientes pós-produção</strong>.</p>
-            <p>Atualmente atuo na <strong>Stellantis</strong> como <strong>Serial Life Software Quality Analyst</strong>, realizando análises avançadas de falha em sistemas de infotainment automotivos, incluindo reflash de módulos, processos de atualização <strong>FOTA/AOTA/MOTA</strong> e validação de patches em concessionárias.</p>
+            <p>Sou <strong>In-Field Software Quality Analyst</strong> na <strong>Stellantis South America</strong> (via ACT Digital), na interseção entre diagnóstico de ECUs, software embarcado e qualidade de produto em campo. Meu foco é transformar falhas complexas e dados de campo em soluções de engenharia que aumentam a confiabilidade.</p>
+            <p>Hoje respondo pela qualidade de campo do <strong>sistema de áudio e da antena</strong>: KPIs de garantia (3MIS/12MIS, PPM, FTY), peças devolvidas (PRC) e análises de fornecedores. Estou assumindo as centrais multimídia da <strong>Ram Dakota</strong> e da <strong>Fiat Titano</strong>. Antes, atuei no diagnóstico de ECUs multicore com <strong>UDS, DoIP, CAN/LIN, HIL</strong> e homologação de campanhas <strong>FOTA/AOTA/MOTA</strong>.</p>
+            <p>Minha base vem do <strong>Mangue Baja SAE (UFPE)</strong>, onde fui de desenvolvedor a coordenador de sistemas embarcados e especialista em qualidade: ECUs, PCBs, firmware, telemetria e validação em pista. Contribuí para uma <strong>redução de 45% no tempo total de testes</strong> e <strong>13% de melhora no desempenho do veículo</strong>. O código desse trabalho está público na aba <a href="#" onclick="switchTab('projects'); return false;" style="color:var(--cyan);">Projetos</a>.</p>
           </div>
           <div class="specs-block">
             <div class="specs-header">// FICHA TÉCNICA</div>
@@ -1960,7 +2041,7 @@ body::after {
             </div>
             <div class="spec-row">
               <div class="spec-key">CARGO</div>
-              <div class="spec-val">Product Analyst 2 / Serial Life Software Quality Analyst</div>
+              <div class="spec-val">In-Field Software Quality Analyst · Product Analyst 2</div>
             </div>
             <div class="spec-row">
               <div class="spec-key">LOCALIZAÇÃO</div>
@@ -1968,7 +2049,7 @@ body::after {
             </div>
             <div class="spec-row">
               <div class="spec-key">FORMAÇÃO</div>
-              <div class="spec-val">Eng. Eletrônica · UFPE</div>
+              <div class="spec-val">Eng. Mecatrônica · IFMG (ex-UFPE)</div>
             </div>
             <div class="spec-row">
               <div class="spec-key">FOCO</div>
@@ -1976,7 +2057,7 @@ body::after {
             </div>
             <div class="spec-row">
               <div class="spec-key">IDIOMAS</div>
-              <div class="spec-val">PT-BR · English</div>
+              <div class="spec-val">PT-BR nativo · English avançado</div>
             </div>
             <div class="spec-row">
               <div class="spec-key">GITHUB</div>
@@ -1992,15 +2073,15 @@ body::after {
             <span class="stat-label">Anos Exp.</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num"><span class="counter" data-target="10">0</span><span class="stat-suffix">+</span></span>
-            <span class="stat-label">Projetos</span>
+            <span class="stat-num"><span class="counter" data-target="9">0</span><span class="stat-suffix"></span></span>
+            <span class="stat-label">Repos no GitHub</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num"><span class="counter" data-target="9">0</span><span class="stat-suffix"></span></span>
+            <span class="stat-num"><span class="counter" data-target="11">0</span><span class="stat-suffix"></span></span>
             <span class="stat-label">Certificações</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num"><span class="counter" data-target="5">0</span><span class="stat-suffix"></span></span>
+            <span class="stat-num"><span class="counter" data-target="6">0</span><span class="stat-suffix"></span></span>
             <span class="stat-label">Prêmios SAE</span>
           </div>
         </div>
@@ -2008,30 +2089,18 @@ body::after {
         <!-- Education -->
         <div class="section-label">// FORMAÇÃO ACADÊMICA</div>
         <div class="edu-grid">
-          <div class="edu-card">
-            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-            <div class="edu-info">
-              <h4>Bacharelado em Engenharia Eletrônica</h4>
-              <p>Universidade Federal de Pernambuco (UFPE)</p>
-              <p style="color:var(--accent);font-family:var(--mono);font-size:11px;margin-top:4px;">Jun 2022 – Jun 2028</p>
-            </div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-icon"><i class="fas fa-certificate"></i></div>
-            <div class="edu-info">
-              <h4>Aceleração de Carreiras — Engenharia de Qualidade de Software</h4>
-              <p>CESAR School</p>
-              <p style="color:var(--accent);font-family:var(--mono);font-size:11px;margin-top:4px;">Out 2025 – Dez 2025</p>
-            </div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-icon"><i class="fas fa-school"></i></div>
-            <div class="edu-info">
-              <h4>Ensino Médio Profissionalizante — Técnico em Meio Ambiente</h4>
-              <p>IFPE — Instituto Federal de Pernambuco</p>
-              <p style="color:var(--accent);font-family:var(--mono);font-size:11px;margin-top:4px;">Jan 2018 – Jan 2022</p>
-            </div>
-          </div>
+          <div class="edu-card"><div class="edu-icon"><i class="fas fa-graduation-cap"></i></div><div class="edu-info">
+            <h4>Bacharelado em Engenharia Mecatrônica, Robótica e Automação</h4><p>IFMG — Campus Betim</p>
+            <p style="color:var(--accent);font-family:var(--mono);font-size:11px;margin-top:4px;">Ago 2026 – Atual</p></div></div>
+          <div class="edu-card"><div class="edu-icon"><i class="fas fa-microchip"></i></div><div class="edu-info">
+            <h4>Engenharia Elétrica, Eletrônica e de Telecomunicações</h4><p>UFPE · transferido para o IFMG</p>
+            <p style="color:var(--accent);font-family:var(--mono);font-size:11px;margin-top:4px;">Jun 2022 – Nov 2025</p></div></div>
+          <div class="edu-card"><div class="edu-icon"><i class="fas fa-certificate"></i></div><div class="edu-info">
+            <h4>FAST Aceleração de Carreiras — Engenharia de Qualidade de Software</h4><p>CESAR School</p>
+            <p style="color:var(--accent);font-family:var(--mono);font-size:11px;margin-top:4px;">Out 2025 – Dez 2025</p></div></div>
+          <div class="edu-card"><div class="edu-icon"><i class="fas fa-school"></i></div><div class="edu-info">
+            <h4>Ensino Médio Profissionalizante — Técnico em Meio Ambiente</h4><p>IFPE — Campus Garanhuns</p>
+            <p style="color:var(--accent);font-family:var(--mono);font-size:11px;margin-top:4px;">Jan 2018 – Jan 2022</p></div></div>
         </div>
       </div>
     </div>
@@ -2045,72 +2114,67 @@ body::after {
         <h2 class="section-title">Experiência</h2>
         <div class="timeline">
 
-          <!-- ══ ACT DIGITAL ══ -->
+          <!-- ══ ACT DIGITAL / STELLANTIS ══ -->
           <div class="tl-item">
             <div class="tl-dot current"></div>
             <div class="tl-content">
               <div class="exp-card">
                 <div class="exp-header">
                   <div>
-                    <div class="exp-title">Product Analyst 2</div>
-                    <div class="exp-company"><i class="fas fa-building"></i> act digital</div>
-                    <div class="exp-sub">Working at Stellantis South America · Betim, MG</div>
+                    <div class="exp-title">In-Field Software Quality Analyst — Infotainment, Loudspeakers &amp; Antenna</div>
+                    <div class="exp-company"><i class="fas fa-building"></i> ACT Digital · Stellantis South America</div>
+                    <div class="exp-sub">Cargo: Product Analyst 2 · Betim, MG · <span style="color:var(--text-3);font-size:11px;">2 anos no grupo Stellantis</span></div>
                   </div>
-                  <div class="exp-period current">Dez 2025 — Atual · 6 meses</div>
+                  <div class="exp-period current">Dez 2025 — Atual · 11 meses</div>
                 </div>
                 <ul class="exp-list">
-                  <li>Membro da <strong>SWAT (Swift Action Team)</strong> de diagnósticos e suporte técnico de Infotainment, realizando testes avançados em bancada e veículo para identificar modos de falha e conduzir análise de causa raiz em sistemas pós-produção. Troubleshooting de problemas de hardware, software e comunicação <strong>CAN/LIN</strong> usando ferramentas como <strong>CANalyzer, CANcase, CANdela, DIAglyser, DIAnalyser e CDA</strong>.</li>
-                  <li><strong>Interface Técnica e Gestão de Problemas:</strong> Interface técnica com fornecedores globais, suportando a Qualidade de Produto em sistemas de Infotainment (módulos, rádios, speakers, antenas e amplificadores). Análise de dados QFS, priorização de issues críticos e definição de planos de ação corretivos com equipes cross-funcionais (Engenharia, Qualidade de Fornecedores, Pós-Venda e Manufatura), aplicando metodologias de RCA (<strong>5 Porquês, Ishikawa, FTA</strong>) para garantir contenção, ações corretivas permanentes e prevenção de recorrência.</li>
-                  <li><strong>Diagnósticos e Validação de Sistemas:</strong> Diagnósticos de primeiro nível em componentes retornados por garantia e veículos de campo, incluindo reflash de módulos, validação de software (<strong>FOTA, AOTA, MOTA</strong>) e análise de logs para identificar falhas sistêmicas. Desenvolvimento e execução de casos de teste para sistemas de infotainment, clusters digitais (IPC), serviços conectados e interfaces de comunicação veicular, aplicando metodologias de teste de integração e regressão.</li>
-                  <li><strong>Análise de Garantia e Melhoria Contínua:</strong> Análise de peças de garantia (3/12 meses) e dados do PRC (Parts Return Center), gerenciando reclamações de clientes via QFS para garantir resoluções efetivas e tecnicamente fundamentadas. Identificação de padrões recorrentes de falha, geração de relatórios técnicos e condução de melhorias de software e hardware para aumentar o yield de manufatura e reduzir defeitos.</li>
-                  <li><strong>Escopo Técnico (EECI):</strong> Rádios, displays, clusters de instrumentos (IPC), antenas, portas USB, carregadores sem fio, speakers, TBM, serviços conectados e sistemas elétricos e eletrônicos embarcados.</li>
+                  <li><strong>Qualidade de campo do áudio e da antena:</strong> tweeter, woofer, subwoofer, alto-falantes full range e mid range, em produção seriada. Conduz a resolução reativa de problemas da primeira análise até a prova de eficácia da ação na linha. Assumindo as centrais multimídia da <strong>Ram Dakota</strong> e da <strong>Fiat Titano</strong>.</li>
+                  <li><strong>KPIs de garantia (3MIS/12MIS):</strong> consolida retornos PRC e dados de campo para priorizar falhas recorrentes, reduzir <strong>PPM</strong> e elevar o <strong>First Time Yield (FTY)</strong>.</li>
+                  <li><strong>Gestão ponta a ponta de issues</strong> com rastreabilidade de evidências e decisões; acompanha análises de fornecedores e valida a consistência das conclusões contra os dados de campo.</li>
+                  <li><strong>Dashboards Power BI</strong> (Power Query, DAX, ETL) com visibilidade de issues, tendências de diagnóstico, KPIs e Lessons Learned.</li>
+                  <li><strong>Interface</strong> entre Engenharia de Produto, Desenvolvimento, Manufatura, Pós-venda, Fornecedores e Qualidade, escalando problemas críticos e alinhando contenções.</li>
                 </ul>
                 <div class="exp-tags">
-                  <span class="tag">CANalyzer</span>
-                  <span class="tag">CANcase</span>
-                  <span class="tag">CANdela</span>
-                  <span class="tag">DIAglyser</span>
-                  <span class="tag">CDA</span>
-                  <span class="tag">UDS/OBD-II</span>
-                  <span class="tag tag-green">FOTA/AOTA/MOTA</span>
-                  <span class="tag tag-cyan">Root Cause Analysis</span>
-                  <span class="tag tag-cyan">5 Whys · Ishikawa · FTA</span>
-                  <span class="tag">QFS</span>
-                  <span class="tag">IPC · TBM</span>
+                  <span class="tag">8D</span>
+                  <span class="tag">FMEA</span>
+                  <span class="tag">FTA</span>
+                  <span class="tag">PRC · 3MIS/12MIS</span>
+                  <span class="tag tag-green">PPM · FTY</span>
+                  <span class="tag tag-cyan">Power BI · DAX</span>
+                  <span class="tag">Lessons Learned</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- ══ STELLANTIS — grupo de 1 ano 7 meses ══ -->
           <div class="tl-item">
-            <div class="tl-dot current"></div>
+            <div class="tl-dot"></div>
             <div class="tl-content">
               <div class="exp-card">
                 <div class="exp-header">
                   <div>
-                    <div class="exp-title">Serial Life Software Quality Analyst — Peripheral Systems & Diagnostics</div>
-                    <div class="exp-company"><i class="fas fa-building"></i> Stellantis South America</div>
-                    <div class="exp-sub">Betim, MG · <span style="color:var(--text-3);font-size:11px;">1 ano 7 meses total no grupo Stellantis</span></div>
+                    <div class="exp-title">In-Field Software Quality Analyst — Diagnostic</div>
+                    <div class="exp-company"><i class="fas fa-building"></i> ACT Digital · Stellantis South America</div>
+                    <div class="exp-sub">Cargo: Product Analyst 2 · Betim, MG · <span style="color:var(--text-3);font-size:11px;">2 anos no grupo Stellantis</span></div>
                   </div>
-                  <div class="exp-period current">Dez 2025 — Atual · 6 meses</div>
+                  <div class="exp-period">Dez 2025 — Out 2026 · 11 meses</div>
                 </div>
                 <ul class="exp-list">
-                  <li>Membro da <strong>SWAT (Swift Action Team)</strong> de diagnósticos e suporte técnico de Infotainment, realizando testes avançados em bancada e veículo para identificar modos de falha e conduzir análise de causa raiz em sistemas pós-produção. Troubleshooting de problemas de hardware, software e comunicação <strong>CAN/LIN</strong> usando ferramentas como <strong>CANalyzer, CANcase, CANdela, DIAglyser, DIAnalyser e CDA</strong>.</li>
-                  <li><strong>Interface Técnica e Gestão de Problemas:</strong> Interface técnica com fornecedores globais, suportando a Qualidade de Produto em sistemas de Infotainment (módulos, rádios, speakers, antenas e amplificadores). Análise de dados QFS, priorização de issues críticos e definição de planos de ação corretivos com equipes cross-funcionais (Engenharia, Qualidade de Fornecedores, Pós-Venda e Manufatura), aplicando metodologias RCA (<strong>5 Porquês, Ishikawa, FTA</strong>) para contenção, ações corretivas permanentes e prevenção de recorrência.</li>
-                  <li><strong>Diagnósticos e Validação de Sistemas:</strong> Diagnósticos de primeiro nível em componentes retornados por garantia e veículos de campo, incluindo reflash de módulos, validação de software (<strong>FOTA, AOTA, MOTA</strong>) e análise de logs para identificar falhas sistêmicas. Desenvolvimento e execução de casos de teste para sistemas de infotainment, clusters digitais (IPC), serviços conectados e interfaces de comunicação veicular, aplicando testes de integração e regressão.</li>
-                  <li><strong>Análise de Garantia e Melhoria Contínua:</strong> Análise de peças de garantia (3/12 meses) e dados do PRC, gerenciando reclamações de clientes via QFS. Identificação de padrões recorrentes de falha, geração de relatórios técnicos e condução de melhorias de software e hardware para aumentar o yield de manufatura e reduzir defeitos.</li>
-                  <li><strong>Escopo Técnico (EECI):</strong> Rádios, displays, clusters de instrumentos (IPC), antenas, portas USB, carregadores sem fio, speakers, TBM, serviços conectados e sistemas elétricos e eletrônicos embarcados.</li>
+                  <li><strong>Suporte técnico de nível superior</strong> à Reatividade, concessionárias e clientes: reprodução de falhas complexas sob condições controladas e rastreio até a causa-raiz.</li>
+                  <li><strong>Bancada, HIL e veículo</strong> em ECUs multicore (Infotainment, IPC, TBM); análise de peças devolvidas (PRC), validando a origem do defeito ou a ausência de falha (NFF).</li>
+                  <li><strong>UDS (ISO 14229) sobre CAN e DoIP:</strong> sessões, DIDs, rotinas e análise de DTC/Snapshot/Extended Data via ODX/CDD, com DIAglyser, DIAnalyser, CDA e CANalyzer.</li>
+                  <li><strong>Redes CAN/LIN (ISO 11898/17987):</strong> bus load, latência, jitter e integridade de frames, decodificando DBC, LDF, ARXML e arquivos .car/.par.</li>
+                  <li><strong>Testes e OTA:</strong> procedimentos funcionais, integração, regressão, estresse, Sleep/Wake-up e corrente quiescente; ECU flashing com validação pós-reflash; homologação de campanhas <strong>FOTA, AOTA e MOTA</strong> (bootloader, reflash fail-safe, rollback).</li>
+                  <li><strong>Causa-raiz:</strong> crash logs, core dumps e interações hardware/software com RCA, 8D, FMEA e Fault Injection.</li>
                 </ul>
                 <div class="exp-tags">
                   <span class="tag">CANalyzer</span>
                   <span class="tag">CANdela</span>
-                  <span class="tag">CDA</span>
-                  <span class="tag">CAN/LIN</span>
+                  <span class="tag">DIAglyser · DIAnalyser</span>
+                  <span class="tag tag-green">UDS · DoIP</span>
+                  <span class="tag tag-cyan">HIL</span>
                   <span class="tag tag-green">FOTA/AOTA/MOTA</span>
-                  <span class="tag tag-cyan">Integration Testing</span>
-                  <span class="tag tag-cyan">Regression Testing</span>
-                  <span class="tag">PRC · QFS</span>
+                  <span class="tag tag-cyan">RCA · 8D · FMEA</span>
                 </div>
               </div>
             </div>
@@ -2195,9 +2259,9 @@ body::after {
                   <div>
                     <div class="exp-title">Embedded Systems Quality Specialist</div>
                     <div class="exp-company"><i class="fas fa-car-crash"></i> Mangue Baja · Recife, PE</div>
-                    <div class="exp-sub">Equipe de Competição Baja SAE Brasil · UFPE · <span style="color:var(--text-3);font-size:11px;">3 anos 1 mês total no Mangue Baja</span></div>
+                    <div class="exp-sub">Equipe de Competição Baja SAE Brasil · UFPE · <span style="color:var(--text-3);font-size:11px;">3 anos 4 meses total no Mangue Baja</span></div>
                   </div>
-                  <div class="exp-period current">Abr 2025 — Atual · 1 ano 2 meses</div>
+                  <div class="exp-period">Abr 2025 — Ago 2026 · 1 ano 5 meses</div>
                 </div>
                 <ul class="exp-list">
                   <li><strong>Quality Assurance & E/E Architecture:</strong> Atuação como Quality Specialist com suporte técnico no desenvolvimento e validação dos sistemas elétricos e eletrônicos do veículo off-road, garantindo conformidade estrita e confiabilidade sistêmica da arquitetura E/E.</li>
@@ -2300,8 +2364,131 @@ body::after {
     <div class="projects-panel">
       <div class="container">
         <div class="section-label">// PROJETOS TÉCNICOS</div>
-        <h2 class="section-title">Projetos Destacados</h2>
+        <h2 class="section-title">Projetos &amp; Repositórios</h2>
+        <p class="proj-lead">Firmware, telemetria e análise de dados que desenvolvi no Mangue Baja (UFPE). Cada card abaixo aponta para o código no GitHub.</p>
 
+        <div class="gh-bar">
+          <a class="gh-handle" href="https://github.com/DARXS" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/DARXS</a>
+          <span class="gh-stat"><b>9</b> repositórios públicos</span>
+          <span class="gh-stat">C++ · Python · C · Jupyter · HTML</span>
+          <a class="btn btn-primary" href="https://github.com/DARXS?tab=repositories" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver todos</a>
+        </div>
+
+        <div class="sysmap">
+          <div class="sysmap-head">Como os repositórios se conectam no veículo <span>clique em um módulo para ir ao projeto</span></div>
+          <div class="flow">
+            <div class="flow-col"><div class="flow-title">ECUs na rede CAN</div>
+              <a class="node" href="#repo-mmi" data-jump="mmi"><b>MMI-24</b><span>IMU, RPM, chaves do painel</span></a>
+              <a class="node" href="#repo-tcu" data-jump="tcu"><b>TCU-24</b><span>temperaturas, velocidade, SoC, servo</span></a></div>
+            <div class="flow-col mid"><div class="flow-title">Barramento</div><div class="node bus"><b>Rede CAN</b><span>mensagens por ID</span></div></div>
+            <div class="flow-col"><div class="flow-title">Coleta e telemetria</div>
+              <a class="node" href="#repo-scu" data-jump="scu"><b>SCU-24</b><span>SD a 40 Hz + MQTT por GPRS</span></a>
+              <a class="node" href="#repo-mpu" data-jump="mpu"><b>MPU-25</b><span>LoRa + BLE, receptor com SD</span></a></div>
+            <div class="flow-col"><div class="flow-title">Pós-análise</div>
+              <a class="node" href="#repo-ilogger" data-jump="ilogger"><b>iLogger</b><span>filtros, FFT, insights, exportação</span></a></div>
+          </div>
+          <div class="sysmap-foot">Fora do fluxo: <a href="#repo-avtest" data-jump="avtest">AV-Test</a> (cronometragem em pista via ESP-NOW) e <a href="#repo-audio" data-jump="audio">Análise de Áudio</a> (notebook de DSP).</div>
+        </div>
+
+        <div class="pf-bar" role="group" aria-label="Filtrar projetos">
+          <button class="pf-chip active" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="pf-chip" data-filter="firmware" aria-pressed="false">Firmware embarcado</button>
+          <button class="pf-chip" data-filter="telemetria" aria-pressed="false">Telemetria</button>
+          <button class="pf-chip" data-filter="analise" aria-pressed="false">Análise de dados</button>
+        </div>
+        <div class="rp-grid">
+          <article class="rp feat" id="repo-ilogger" data-repo="iLogger" data-cat="telemetria analise">
+            <div class="rp-top"><a class="rp-name" href="https://github.com/DARXS/iLogger" target="_blank" rel="noopener"><i class="fab fa-github"></i>DARXS/iLogger</a><span class="rp-year">2026</span></div>
+            <h3 class="rp-title">iLogger — análise de telemetria Baja SAE</h3>
+            <p class="rp-desc">Aplicativo desktop (PyQt6 + PyQtGraph) que carrega, filtra e analisa os dados de sensores das runs do protótipo. Converte as frequências do sensor de disco de freio em RPM, velocidade, aceleração e distância, com painéis de FFT, histogramas, correlações e detecção automática de anomalias.</p>
+            <div class="rp-facts"><span class="metric">PyQt6 · PyQtGraph</span><span class="metric">100.000+ pontos por run</span><span class="metric">Excel · PDF · JSON · CSV</span></div>
+            <details class="rp-more"><summary>Detalhes técnicos</summary><ul><li>Filtragem digital configurável em tempo real, com cache por hash SHA-256 para trocar parâmetros instantaneamente.</li><li>Pipeline 100% vetorizado em NumPy/SciPy, sem loops Python sobre as amostras, o que mantém a interface fluida.</li><li>Canais virtuais definidos por expressões NumPy em ambiente restrito; arquitetura em três camadas (dados, processamento, interface).</li></ul></details>
+            <div class="proj-tags"><span class="tag">Python</span><span class="tag">PyQt6</span><span class="tag">NumPy</span><span class="tag">SciPy</span><span class="tag">FFT</span></div>
+            <div class="rp-foot">
+              <div class="rp-meta"><span><i class="lang-dot" style="background:#3572A5"></i> Python</span><span><i class="fas fa-star"></i> <b data-stars>1</b></span><span>atualizado <time data-pushed datetime="2026-07-27T13:03:39Z">jul 2026</time></span></div>
+              <a class="btn btn-outline rp-btn" href="https://github.com/DARXS/iLogger" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver repositório</a>
+            </div>
+          </article>
+          <article class="rp feat" id="repo-mpu" data-repo="MangueBaja_MPU-25" data-cat="firmware telemetria">
+            <div class="rp-top"><a class="rp-name" href="https://github.com/DARXS/MangueBaja_MPU-25" target="_blank" rel="noopener"><i class="fab fa-github"></i>DARXS/MangueBaja_MPU-25</a><span class="rp-year">2025</span></div>
+            <h3 class="rp-title">MPU-25 — telemetria CAN → LoRa</h3>
+            <p class="rp-desc">Um ESP32 a bordo lê os sensores da rede CAN (IMU, RPM, velocidade, temperaturas, tensão) e o GPS, e transmite um pacote consolidado por rádio LoRa. O receptor em terra exibe os dados em texto/JSON e grava em cartão SD.</p>
+            <div class="rp-facts"><span class="metric">CAN → LoRa</span><span class="metric">Depuração via BLE</span><span class="metric">Receptor com SD (CSV)</span></div>
+            <details class="rp-more"><summary>Detalhes técnicos</summary><ul><li>Interface de depuração em tempo real via Bluetooth Low Energy, consultável por app móvel.</li><li>Bibliotecas próprias (CAN, LoRa, BLE, máquina de estados) em projeto PlatformIO, com firmware de transmissor e receptor.</li><li>Evolução do módulo de telemetria de 2023, que alcançou 1,5 km de LoRa com GPS via UART e buffer circular.</li></ul></details>
+            <div class="proj-tags"><span class="tag">ESP32</span><span class="tag">C++</span><span class="tag">PlatformIO</span><span class="tag">LoRa</span><span class="tag">BLE</span><span class="tag">CAN</span></div>
+            <div class="rp-foot">
+              <div class="rp-meta"><span><i class="lang-dot" style="background:#f34b7d"></i> C++</span><span><i class="fas fa-star"></i> <b data-stars>0</b></span><span>atualizado <time data-pushed datetime="2026-07-27T12:50:05Z">jul 2026</time></span></div>
+              <a class="btn btn-outline rp-btn" href="https://github.com/DARXS/MangueBaja_MPU-25" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver repositório</a>
+            </div>
+          </article>
+          <article class="rp feat" id="repo-scu" data-repo="MangueBaja_SCU-24" data-cat="firmware telemetria">
+            <div class="rp-top"><a class="rp-name" href="https://github.com/DARXS/MangueBaja_SCU-24" target="_blank" rel="noopener"><i class="fab fa-github"></i>DARXS/MangueBaja_SCU-24</a><span class="rp-year">2024</span></div>
+            <h3 class="rp-title">SCU-24 — logger CAN com SD e MQTT</h3>
+            <p class="rp-desc">Hub de aquisição em ESP32 com FreeRTOS: escuta a rede CAN por interrupção, grava CSV no cartão SD a 40 Hz e envia a telemetria por GPRS (SIM800) para um broker MQTT a cada 1 s.</p>
+            <div class="rp-facts"><span class="metric">40 Hz no SD</span><span class="metric">MQTT a cada 1 s</span><span class="metric">Dual-core FreeRTOS</span></div>
+            <details class="rp-more"><summary>Detalhes técnicos</summary><ul><li>Duas tarefas em núcleos separados: log no Core 0 e conectividade no Core 1, para que a latência do GPRS nunca atrase o registro dos dados.</li><li>Novo arquivo CSV a cada boot, sem sobrescrever dados; base preparada para atualização OTA.</li></ul></details>
+            <div class="proj-tags"><span class="tag">ESP32</span><span class="tag">FreeRTOS</span><span class="tag">CAN</span><span class="tag">MQTT</span><span class="tag">GPRS</span></div>
+            <div class="rp-foot">
+              <div class="rp-meta"><span><i class="lang-dot" style="background:#f34b7d"></i> C++</span><span><i class="fas fa-star"></i> <b data-stars>0</b></span><span>atualizado <time data-pushed datetime="2025-06-14T01:15:03Z">jun 2025</time></span></div>
+              <a class="btn btn-outline rp-btn" href="https://github.com/DARXS/MangueBaja_SCU-24" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver repositório</a>
+            </div>
+          </article>
+          <article class="rp feat" id="repo-avtest" data-repo="AV-Test" data-cat="firmware">
+            <div class="rp-top"><a class="rp-name" href="https://github.com/DARXS/AV-Test" target="_blank" rel="noopener"><i class="fab fa-github"></i>DARXS/AV-Test</a><span class="rp-year">2025</span></div>
+            <h3 class="rp-title">AV Test — cronometragem de aceleração e velocidade</h3>
+            <p class="rp-desc">Rede de módulos ESP32 que mede os tempos de passagem do veículo a 30 m e 100 m, calcula a velocidade final e registra tudo em cartão SD. Os módulos conversam por ESP-NOW, sem infraestrutura de rede.</p>
+            <div class="rp-facts"><span class="metric">30 m e 100 m</span><span class="metric">ESP-NOW</span><span class="metric">Bridge repetidor</span></div>
+            <details class="rp-more"><summary>Detalhes técnicos</summary><ul><li>ECU de 0 m com LCD I2C e SD coordena a máquina de estados da rede; o módulo de 100 m mede 100 m e 101 m para obter a velocidade final.</li><li>Pacote único com message_id e cache de IDs evita loops de retransmissão no módulo Bridge; interface IModule troca o papel do módulo por uma constante.</li></ul></details>
+            <div class="proj-tags"><span class="tag">ESP32</span><span class="tag">C++</span><span class="tag">ESP-NOW</span><span class="tag">PlatformIO</span><span class="tag">FSM</span></div>
+            <div class="rp-foot">
+              <div class="rp-meta"><span><i class="lang-dot" style="background:#f34b7d"></i> C++</span><span><i class="fas fa-star"></i> <b data-stars>0</b></span><span>atualizado <time data-pushed datetime="2026-07-27T13:04:59Z">jul 2026</time></span></div>
+              <a class="btn btn-outline rp-btn" href="https://github.com/DARXS/AV-Test" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver repositório</a>
+            </div>
+          </article>
+          <article class="rp" id="repo-tcu" data-repo="MangueBaja_TCU-24" data-cat="firmware">
+            <div class="rp-top"><a class="rp-name" href="https://github.com/DARXS/MangueBaja_TCU-24" target="_blank" rel="noopener"><i class="fab fa-github"></i>DARXS/MangueBaja_TCU-24</a><span class="rp-year">2024</span></div>
+            <h3 class="rp-title">TCU-24 — unidade de temperatura e velocidade</h3>
+            <p class="rp-desc">Firmware Mbed OS (NUCLEO-F103RB) que monitora a temperatura do motor (termistor) e da CVT (infravermelho MLX90614 via I2C), calcula a velocidade pelo disco de freio traseiro, mede tensão/SoC e corrente e comanda um servo por mensagens CAN.</p>
+            <div class="rp-facts"><span class="metric">FIR + média móvel</span><span class="metric">MLX90614 (I2C)</span><span class="metric">Servo via CAN</span></div>
+            <details class="rp-more"><summary>Detalhes técnicos</summary><ul><li>Arquitetura orientada a eventos: interrupções e tickers só enfileiram estados; o loop principal os consome em ordem, sem condições de corrida.</li></ul></details>
+            <div class="proj-tags"><span class="tag">Mbed OS</span><span class="tag">C++</span><span class="tag">STM32</span><span class="tag">CAN</span><span class="tag">I2C</span></div>
+            <div class="rp-foot">
+              <div class="rp-meta"><span><i class="lang-dot" style="background:#f34b7d"></i> C++</span><span><i class="fas fa-star"></i> <b data-stars>0</b></span><span>atualizado <time data-pushed datetime="2025-06-14T01:31:16Z">jun 2025</time></span></div>
+              <a class="btn btn-outline rp-btn" href="https://github.com/DARXS/MangueBaja_TCU-24" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver repositório</a>
+            </div>
+          </article>
+          <article class="rp" id="repo-mmi" data-repo="MangueBaja_MMI-24" data-cat="firmware">
+            <div class="rp-top"><a class="rp-name" href="https://github.com/DARXS/MangueBaja_MMI-24" target="_blank" rel="noopener"><i class="fab fa-github"></i>DARXS/MangueBaja_MMI-24</a><span class="rp-year">2024</span></div>
+            <h3 class="rp-title">MMI-24 — ECU frontal (IMU e RPM)</h3>
+            <p class="rp-desc">Firmware Mbed OS da ECU frontal: lê o IMU LSM6DS3 por I2C, estima pitch e roll com Filtro de Kalman, calcula o RPM com filtro FIR e publica tudo na rede CAN a 1 Mbps. Também lê as chaves RUN/CHOKE e o botão 4x4, com debounce em software.</p>
+            <div class="rp-facts"><span class="metric">Filtro de Kalman</span><span class="metric">CAN 1 Mbps</span><span class="metric">IMU LSM6DS3</span></div>
+            <details class="rp-more"><summary>Detalhes técnicos</summary><ul><li>Recebe velocidade, temperaturas e SoC das outras ECUs e envia um pacote serial para o display do piloto.</li></ul></details>
+            <div class="proj-tags"><span class="tag">Mbed OS</span><span class="tag">C</span><span class="tag">STM32</span><span class="tag">CAN</span><span class="tag">Kalman</span></div>
+            <div class="rp-foot">
+              <div class="rp-meta"><span><i class="lang-dot" style="background:#8a8a8a"></i> C</span><span><i class="fas fa-star"></i> <b data-stars>0</b></span><span>atualizado <time data-pushed datetime="2025-06-14T01:31:43Z">jun 2025</time></span></div>
+              <a class="btn btn-outline rp-btn" href="https://github.com/DARXS/MangueBaja_MMI-24" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver repositório</a>
+            </div>
+          </article>
+          <article class="rp" id="repo-audio" data-repo="Analise_De_Audio" data-cat="analise">
+            <div class="rp-top"><a class="rp-name" href="https://github.com/DARXS/Analise_De_Audio" target="_blank" rel="noopener"><i class="fab fa-github"></i>DARXS/Analise_De_Audio</a><span class="rp-year">2024</span></div>
+            <h3 class="rp-title">Análise de áudio em Python</h3>
+            <p class="rp-desc">Notebook com um fluxo de processamento de áudio: carga e reamostragem de waveform, espectrogramas (padrão, cinza e Mel), filtros passa-baixa, passa-alta e passa-banda, pitch shift e features como ZCR, centroide espectral e MFCCs.</p>
+            <div class="rp-facts"><span class="metric">torchaudio · librosa</span><span class="metric">Mel · MFCC</span></div>
+            
+            <div class="proj-tags"><span class="tag">Python</span><span class="tag">Jupyter</span><span class="tag">librosa</span><span class="tag">DSP</span></div>
+            <div class="rp-foot">
+              <div class="rp-meta"><span><i class="lang-dot" style="background:#DA5B0B"></i> Jupyter Notebook</span><span><i class="fas fa-star"></i> <b data-stars>0</b></span><span>atualizado <time data-pushed datetime="2024-06-03T19:20:39Z">jun 2024</time></span></div>
+              <a class="btn btn-outline rp-btn" href="https://github.com/DARXS/Analise_De_Audio" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver repositório</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="rp-slim">
+          <a href="https://github.com/DARXS/DARXS.github.io" target="_blank" rel="noopener"><i class="fab fa-github"></i><b>DARXS.github.io</b><span>Código-fonte deste portfólio (HTML, CSS e JS) · <i class="lang-dot" style="background:#e34c26"></i> HTML</span></a>
+          <a href="https://github.com/DARXS/DARXS" target="_blank" rel="noopener"><i class="fab fa-github"></i><b>DARXS</b><span>README do perfil no GitHub</span></a>
+        </div>
+
+        <div class="section-label" style="margin-top:56px;">// SEM REPOSITÓRIO PÚBLICO</div>
         <div class="projects-grid">
           <div class="proj-card">
             <div class="proj-header">
@@ -2323,72 +2510,6 @@ body::after {
               </div>
             </div>
           </div>
-
-          <div class="proj-card">
-            <div class="proj-header">
-              <div class="proj-icon"><i class="fas fa-tachometer-alt"></i></div>
-              <span class="proj-year">2024</span>
-            </div>
-            <div class="proj-body">
-              <div class="proj-org">// Mangue Baja SAE · UFPE</div>
-              <h3 class="proj-title">Sistema de Teste de Aceleração e Velocidade</h3>
-              <p class="proj-desc">Sistema baseado em <strong>ESP32</strong> utilizando protocolo <strong>ESP-NOW</strong> e máquina de estados finita, reduzindo tempo de montagem e setup em ambiente de competição.</p>
-              <div class="proj-metrics">
-                <span class="metric"><i class="fas fa-clock"></i> -45% Tempo</span>
-              </div>
-              <div class="proj-tags">
-                <span class="tag">ESP32</span>
-                <span class="tag">ESP-NOW</span>
-                <span class="tag">State Machine</span>
-                <span class="tag">C++</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="proj-card">
-            <div class="proj-header">
-              <div class="proj-icon"><i class="fas fa-chart-area"></i></div>
-              <span class="proj-year">2023</span>
-            </div>
-            <div class="proj-body">
-              <div class="proj-org">// Mangue Baja SAE · UFPE</div>
-              <h3 class="proj-title">Interface de Visualização de Telemetria</h3>
-              <p class="proj-desc">Software em <strong>Python</strong> (Pandas, NumPy, Matplotlib) para análise de telemetria veicular, correlacionando dados de sensores com performance em pista para otimização de setup.</p>
-              <div class="proj-metrics">
-                <span class="metric"><i class="fas fa-chart-line"></i> +13% Performance</span>
-              </div>
-              <div class="proj-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">NumPy</span>
-                <span class="tag">Matplotlib</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="proj-card">
-            <div class="proj-header">
-              <div class="proj-icon"><i class="fas fa-map-marked-alt"></i></div>
-              <span class="proj-year">2023</span>
-            </div>
-            <div class="proj-body">
-              <div class="proj-org">// Mangue Baja SAE · UFPE</div>
-              <h3 class="proj-title">Unidade de Controle de Mapeamento</h3>
-              <p class="proj-desc">Sistema baseado em <strong>ESP32/FreeRTOS</strong> com GPS, transmissão <strong>LoRa</strong> de longo alcance e registro em SD card para mapeamento de percurso e análise pós-prova.</p>
-              <div class="proj-metrics">
-                <span class="metric"><i class="fas fa-satellite-dish"></i> LoRa 1.5km</span>
-                <span class="metric"><i class="fas fa-map-pin"></i> GPS Track</span>
-              </div>
-              <div class="proj-tags">
-                <span class="tag">ESP32</span>
-                <span class="tag">FreeRTOS</span>
-                <span class="tag">LoRa</span>
-                <span class="tag">GPS</span>
-                <span class="tag">SD Card</span>
-              </div>
-            </div>
-          </div>
-
           <div class="proj-card">
             <div class="proj-header">
               <div class="proj-icon"><i class="fas fa-microchip"></i></div>
@@ -2409,7 +2530,6 @@ body::after {
               </div>
             </div>
           </div>
-
           <div class="proj-card">
             <div class="proj-header">
               <div class="proj-icon"><i class="fas fa-tools"></i></div>
@@ -2431,19 +2551,6 @@ body::after {
             </div>
           </div>
         </div>
-
-        <!-- GitHub Repos -->
-        <div class="github-section">
-          <div class="section-label">// OPEN SOURCE</div>
-          <h3 class="section-title" style="font-size:28px;margin-bottom:20px;">GitHub · <a href="https://github.com/DARXS" target="_blank" style="color:var(--cyan);font-size:22px;text-decoration:none;">@DARXS</a></h3>
-          <div class="github-repos" id="github-repos">
-            <div class="loading-state">
-              <i class="fas fa-spinner fa-spin"></i>
-              <p>Carregando repositórios...</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -2498,7 +2605,7 @@ body::after {
                 <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
               </div>
               <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">UDS / OBD-II Diagnostics</span><span class="skill-pct">85%</span></div>
+                <div class="skill-info"><span class="skill-name">UDS (ISO 14229) · DoIP</span><span class="skill-pct">85%</span></div>
                 <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
               </div>
               <div class="skill-item">
@@ -2587,6 +2694,12 @@ body::after {
             <div class="tech-pill"><i class="fas fa-database" style="color:var(--cyan)"></i> SQL</div>
             <div class="tech-pill"><i class="fas fa-print" style="color:var(--green)"></i> KiCad</div>
             <div class="tech-pill"><i class="fas fa-car-crash" style="color:var(--accent)"></i> SAE Standards</div>
+            <div class="tech-pill"><i class="fas fa-stethoscope" style="color:var(--green)"></i> DoIP</div>
+            <div class="tech-pill"><i class="fas fa-microchip" style="color:var(--accent)"></i> HIL</div>
+            <div class="tech-pill"><i class="fas fa-shield-alt" style="color:var(--cyan)"></i> ISO 26262</div>
+            <div class="tech-pill"><i class="fas fa-wifi" style="color:var(--accent)"></i> MQTT · BLE</div>
+            <div class="tech-pill"><i class="fas fa-microchip" style="color:var(--cyan)"></i> Mbed OS</div>
+            <div class="tech-pill"><i class="fas fa-code" style="color:var(--accent)"></i> PyQt6</div>
           </div>
         </div>
       </div>
@@ -2614,7 +2727,7 @@ body::after {
             <div class="cert-icon-wrap"><i class="fas fa-microchip"></i></div>
             <div class="cert-info">
               <div class="cert-title">HIL Specialist 2.0</div>
-              <div class="cert-provider">Specialization Program</div>
+              <div class="cert-provider">Typhoon HIL · Specialization Program</div>
               <div class="cert-desc">Hardware-in-the-Loop Testing & Validation</div>
               <a href="https://linkedin.com/in/daniloadryel" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver Certificado</a>
             </div>
@@ -2639,7 +2752,7 @@ body::after {
           <div class="cert-card">
             <div class="cert-icon-wrap"><i class="fas fa-project-diagram"></i></div>
             <div class="cert-info">
-              <div class="cert-title">Simscape Onramp</div>
+              <div class="cert-title">MATLAB, Simulink &amp; Simscape Onramps</div>
               <div class="cert-provider">MathWorks</div>
               <div class="cert-desc">Physical Modeling & Simulation</div>
               <a href="https://www.mathworks.com" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver Certificado</a>
@@ -2648,17 +2761,17 @@ body::after {
           <div class="cert-card">
             <div class="cert-icon-wrap"><i class="fas fa-chart-bar"></i></div>
             <div class="cert-info">
-              <div class="cert-title">Especialista em Microsoft Power BI</div>
-              <div class="cert-provider">Microsoft & LinkedIn Learning</div>
+              <div class="cert-title">Microsoft Power BI for Data Analysts</div>
+              <div class="cert-provider">Pluralsight</div>
               <div class="cert-desc">Business Intelligence & Data Visualization</div>
-              <a href="https://www.linkedin.com/learning/" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver Certificado</a>
+              <a href="https://www.pluralsight.com/" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver Certificado</a>
             </div>
           </div>
           <div class="cert-card">
             <div class="cert-icon-wrap"><i class="fas fa-brain"></i></div>
             <div class="cert-info">
               <div class="cert-title">Machine Learning Specialization</div>
-              <div class="cert-provider">DeepLearning.AI · Coursera</div>
+              <div class="cert-provider">Stanford Online · Coursera</div>
               <div class="cert-desc">Supervised & Unsupervised Learning, Neural Networks</div>
               <a href="https://www.coursera.org" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver Certificado</a>
             </div>
@@ -2679,6 +2792,24 @@ body::after {
               <div class="cert-provider">CESAR School</div>
               <div class="cert-desc">Engenharia de Qualidade de Software</div>
               <a href="https://www.cesar.school/" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver Certificado</a>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon-wrap"><i class="fas fa-microchip"></i></div>
+            <div class="cert-info">
+              <div class="cert-title">Embedded Systems Programming: Getting Started</div>
+              <div class="cert-provider">Certificação</div>
+              <div class="cert-desc">Fundamentos de programação de sistemas embarcados</div>
+              <a href="https://linkedin.com/in/daniloadryel" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver no LinkedIn</a>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+            <div class="cert-info">
+              <div class="cert-title">Software Development — Security, Safety and Quality</div>
+              <div class="cert-provider">Certificação</div>
+              <div class="cert-desc">Segurança, safety e qualidade no desenvolvimento</div>
+              <a href="https://linkedin.com/in/daniloadryel" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver no LinkedIn</a>
             </div>
           </div>
         </div>
@@ -2797,13 +2928,14 @@ body::after {
               <span class="t-comment">// Danilo Adryel — Contact Info</span><br>
               {<br>
               &nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-str">"Danilo Adryel R.X.S."</span>,<br>
-              &nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-str">"Serial Life SQA Analyst"</span>,<br>
+              &nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-str">"In-Field SW Quality Analyst"</span>,<br>
               &nbsp;&nbsp;<span class="t-key">"company"</span>: <span class="t-acc">"Stellantis South America"</span>,<br>
               &nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-str">"Contagem, MG, BR"</span>,<br>
               &nbsp;&nbsp;<span class="t-key">"email"</span>: <span class="t-val">"danilo.adryel.r.x.s@gmail.com"</span>,<br>
               &nbsp;&nbsp;<span class="t-key">"phone"</span>: <span class="t-val">"+55 87 99634-4807"</span>,<br>
               &nbsp;&nbsp;<span class="t-key">"linkedin"</span>: <span class="t-val">"daniloadryel"</span>,<br>
               &nbsp;&nbsp;<span class="t-key">"github"</span>: <span class="t-val">"DARXS"</span>,<br>
+              &nbsp;&nbsp;<span class="t-key">"public_repos"</span>: <span class="t-acc">9</span>,<br>
               &nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-acc">"open_to_opportunities"</span>,<br>
               &nbsp;&nbsp;<span class="t-key">"stack"</span>: [<br>
               &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Embedded C/C++"</span>,<br>
@@ -2825,7 +2957,7 @@ body::after {
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <p>© 2026 <span>Danilo Adryel</span> · Serial Life Software Quality Analyst · Stellantis · Built with precision &amp; passion</p>
+    <p>© 2026 <span>Danilo Adryel</span> · In-Field Software Quality Analyst · Stellantis · Built with precision &amp; passion</p>
   </div>
 </footer>
 
@@ -2984,44 +3116,46 @@ if (brandName) {
     }, 60);
   });
 }
+// ─── PROJETOS: filtros, atalhos do mapa e dados ao vivo ───────
+(function initProjects() {
+  const chips = document.querySelectorAll('.pf-chip');
+  const cards = document.querySelectorAll('.rp[data-cat]');
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    chips.forEach(c => { c.classList.toggle('active', c === chip); c.setAttribute('aria-pressed', c === chip); });
+    cards.forEach(card => { card.hidden = !(chip.dataset.filter === 'all' || card.dataset.cat.split(' ').includes(chip.dataset.filter)); });
+  }));
+  document.querySelectorAll('[data-jump]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.pf-chip[data-filter="all"]').click();
+    const t = document.getElementById('repo-' + a.dataset.jump);
+    if (!t) return;
+    t.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    t.classList.remove('flash'); void t.offsetWidth; t.classList.add('flash');
+    const d = t.querySelector('details'); if (d) d.open = true;
+  }));
+})();
+
+// Atualiza estrelas e data do último push com a API do GitHub.
+// Se a API falhar (limite de requisições), os valores estáticos do HTML continuam valendo.
 let githubLoaded = false;
 async function loadGitHub() {
   if (githubLoaded) return;
   githubLoaded = true;
-  const container = document.getElementById('github-repos');
-  const langColors = {
-    'C++': '#f34b7d', 'C': '#555555', 'Python': '#3572A5',
-    'JavaScript': '#f1e05a', 'HTML': '#e34c26', 'Shell': '#89e051',
-    'Makefile': '#427819', 'CMake': '#DA3434', 'Jupyter Notebook': '#DA5B0B'
-  };
+  const MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
   try {
-    const res = await fetch('https://api.github.com/users/DARXS/repos?sort=updated&per_page=12');
-    if (!res.ok) throw new Error('GitHub API error');
-    const repos = await res.json();
-    const filtered = repos.filter(r => !r.fork).slice(0, 9);
-    if (!filtered.length) { container.innerHTML = '<div class="loading-state"><p>Nenhum repositório público encontrado.</p></div>'; return; }
-    container.innerHTML = filtered.map(r => {
-      const lang = r.language || '';
-      const color = langColors[lang] || '#8fa3bf';
-      return `
-        <a href="${r.html_url}" target="_blank" rel="noopener" class="repo-card">
-          <div class="repo-name"><i class="fab fa-github" style="color:var(--text-3);margin-right:6px;font-size:13px;"></i>${r.name}</div>
-          <div class="repo-desc">${r.description || 'No description provided.'}</div>
-          <div class="repo-meta">
-            ${lang ? `<span><span class="lang-dot" style="background:${color}"></span>${lang}</span>` : ''}
-            <span><i class="fas fa-star"></i> ${r.stargazers_count}</span>
-            <span><i class="fas fa-code-branch"></i> ${r.forks_count}</span>
-          </div>
-        </a>`;
-    }).join('');
-  } catch (e) {
-    container.innerHTML = `
-      <div class="loading-state">
-        <i class="fab fa-github" style="animation:none;"></i>
-        <p>Não foi possível carregar repositórios.<br>
-        <a href="https://github.com/DARXS" target="_blank" style="color:var(--cyan);text-decoration:none;">Ver perfil no GitHub →</a></p>
-      </div>`;
-  }
+    const res = await fetch('https://api.github.com/users/DARXS/repos?per_page=100&sort=updated');
+    if (!res.ok) throw new Error('GitHub API ' + res.status);
+    const byName = Object.fromEntries((await res.json()).map(r => [r.name, r]));
+    document.querySelectorAll('.rp[data-repo]').forEach(card => {
+      const r = byName[card.dataset.repo];
+      if (!r) return;
+      card.querySelector('[data-stars]').textContent = r.stargazers_count;
+      const t = card.querySelector('time[data-pushed]');
+      const d = new Date(r.pushed_at);
+      t.dateTime = r.pushed_at;
+      t.textContent = MES[d.getMonth()] + ' ' + d.getFullYear();
+    });
+  } catch (e) { /* mantém os dados estáticos */ }
 }
 </script>
 </body>
