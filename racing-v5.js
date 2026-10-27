@@ -4,6 +4,7 @@
 'use strict';
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = s => document.querySelector(s);
+const MOB = matchMedia('(max-width:700px), (pointer:coarse)').matches;
 
 /* ───────── CSS ───────── */
 const css = `
@@ -69,7 +70,18 @@ body.nos .main{animation:shake5 .09s linear infinite}
 .lt-txt{font:italic 700 clamp(24px,5vw,44px) var(--display);letter-spacing:.2em;color:var(--text-2)}
 .lt-txt.go{color:var(--green);text-shadow:0 0 24px var(--green)}
 .lt-skip{font:11px var(--mono);color:var(--text-3)}
-@media(max-width:600px){#cockpit{right:10px;bottom:10px;transform:scale(.82);transform-origin:bottom right}.ck-lap,.ck-sec{display:none}}
+@media(hover:none){.btn::after{display:none}}
+@media(max-width:700px),(pointer:coarse){
+ body{background-attachment:scroll}
+ #cockpit{right:max(10px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));width:158px;padding:8px 10px 7px;opacity:.92;-webkit-tap-highlight-color:transparent}
+ .ck-spd{font-size:28px}.ck-gear{font-size:18px;width:18px}.ck-nos{height:10px;margin:7px 0 2px}.ck-lap,.ck-sec{display:none}
+ .ck-lbl span:last-child{display:none}
+ body.nos .main{animation:none}
+ #vig{box-shadow:inset 0 0 90px 10px rgba(0,200,255,.45)}
+ #flag{width:42vw}#flag.go{animation-duration:1.1s}
+ .ticker{font-size:10px}.tk-lbl{padding:6px 14px 6px 10px}#tk{animation-duration:34s}
+ .lt-panel{gap:9px;padding:12px 14px}
+}
 @media(prefers-reduced-motion:reduce){#flag,#vig{display:none!important}#tk{animation:none}.hero-name .accent{animation:none}}
 `;
 const st = document.createElement('style'); st.id = 'v5'; st.textContent = css; document.head.appendChild(st);
@@ -77,10 +89,10 @@ const st = document.createElement('style'); st.id = 'v5'; st.textContent = css; 
 /* ───────── DOM ───────── */
 document.body.insertAdjacentHTML('beforeend',
  '<canvas id="fx" aria-hidden="true"></canvas><div id="vig" aria-hidden="true"></div><div id="flag" aria-hidden="true"></div>' +
- '<div id="cockpit" aria-hidden="true" title="Clique ou tecle N para NOS · demonstrativo"><div class="ck-row"><span class="ck-gear">N</span><span class="ck-spd">000</span><span>km/h</span></div>' +
- '<div class="ck-nos"><i></i></div><div class="ck-lbl"><span>NOS</span><span>[N] ou clique</span></div>' +
+ '<div id="cockpit" aria-hidden="true" title="Toque ou tecle N para NOS · demonstrativo"><div class="ck-row"><span class="ck-gear">N</span><span class="ck-spd">000</span><span>km/h</span></div>' +
+ '<div class="ck-nos"><i></i></div><div class="ck-lbl"><span>NOS</span><span>[N] ou toque</span></div>' +
  '<div class="ck-lap"><span>LAP <b id="ck-t">0:00.0</b></span><span>BEST <b id="ck-b">--</b></span></div><div class="ck-sec"><i></i><i></i><i></i></div></div>' +
- '<div id="lights" aria-hidden="true"><div class="lt-panel"><i></i><i></i><i></i><i></i><i></i></div><div class="lt-txt">STAND BY</div><div class="lt-skip">clique ou tecle para pular</div></div>');
+ '<div id="lights" aria-hidden="true"><div class="lt-panel"><i></i><i></i><i></i><i></i><i></i></div><div class="lt-txt">STAND BY</div><div class="lt-skip">toque ou tecle para pular</div></div>');
 const home = $('#panel-home');
 if (home) {
   home.insertAdjacentHTML('afterbegin', '<div class="ticker" aria-hidden="true"><span class="tk-lbl">FEED · DEMO</span><div class="tk-win"><div id="tk"></div></div></div>');
@@ -92,13 +104,14 @@ if (home) {
 /* ───────── estado ───────── */
 const V = { kmh: 0, surge: 0, boosting: false, bs: 0, nos: 100 };
 let mv = 0;
-addEventListener('pointermove', e => { mv += Math.abs(e.movementX || 0) + Math.abs(e.movementY || 0); }, { passive: true });
+addEventListener('pointermove', e => { if (e.pointerType === 'touch') return; mv += Math.abs(e.movementX || 0) + Math.abs(e.movementY || 0); }, { passive: true });
 function boost() {
   if (V.boosting || V.nos < 50) return;
   V.nos -= 50; V.boosting = true; document.body.classList.add('nos'); window.revUp && window.revUp();
   setTimeout(() => { document.body.classList.remove('nos'); V.boosting = false; }, 1600);
 }
 $('#cockpit').addEventListener('click', e => { e.stopPropagation(); boost(); });
+$('#cockpit').addEventListener('touchstart', e => { e.preventDefault(); e.stopPropagation(); boost(); }, { passive: false });
 addEventListener('keydown', e => {
   if (e.key.toLowerCase() === 'n' && !/INPUT|TEXTAREA/.test(document.activeElement.tagName) && !e.metaKey && !e.ctrlKey && !e.altKey) boost();
 });
@@ -113,9 +126,9 @@ function at(t, d) {
   return [p[k - 1][0] + (p[k][0] - p[k - 1][0]) * f, p[k - 1][1] + (p[k][1] - p[k - 1][1]) * f];
 }
 function build() {
-  S = Array.from({ length: Math.round(W / 22) }, () => ({ x: Math.random() * W, y: Math.random() * H, l: 20 + Math.random() * 80, s: .4 + Math.random() * 1.2, c: Math.random() < .6 ? '255,106,0' : Math.random() < .5 ? '0,200,255' : '237,242,247' }));
+  S = Array.from({ length: Math.round(W / (MOB ? 48 : 22)) }, () => ({ x: Math.random() * W, y: Math.random() * H, l: 20 + Math.random() * 80, s: .4 + Math.random() * 1.2, c: Math.random() < .6 ? '255,106,0' : Math.random() < .5 ? '0,200,255' : '237,242,247' }));
   T = [];
-  for (let i = 0; i < Math.round(W / 110); i++) {
+  for (let i = 0; i < Math.round(W / (MOB ? 130 : 110)); i++) {
     let px = Math.round(Math.random() * W / 20) * 20, py = Math.round(Math.random() * H / 20) * 20, dir = Math.random() < .5 ? 0 : 1;
     const pts = [[px, py]];
     for (let k = 0; k < 5; k++) {
@@ -130,8 +143,9 @@ function build() {
     T.push({ pts, cum, len, t: Math.random() * len, v: .6 + Math.random() * 1.2, c: Math.random() < .5 ? '0,200,255' : '0,214,143' });
   }
 }
-function size() { const d = Math.min(devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight; fx.width = W * d; fx.height = H * d; x.setTransform(d, 0, 0, d, 0, 0); build(); }
-size(); addEventListener('resize', size);
+function size() { const d = MOB ? 1 : Math.min(devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight; fx.width = W * d; fx.height = H * d; x.setTransform(d, 0, 0, d, 0, 0); build(); }
+let lw = innerWidth;
+size(); addEventListener('resize', () => { if (innerWidth !== lw) { lw = innerWidth; size(); } });
 function paint() {
   x.clearRect(0, 0, W, H); x.lineWidth = 1.2; x.lineJoin = 'round';
   T.forEach(t => {
@@ -140,7 +154,7 @@ function paint() {
     [t.pts[0], t.pts[t.pts.length - 1]].forEach(p => { x.beginPath(); x.arc(p[0], p[1], 3, 0, 6.283); x.stroke(); });
     if (!RM) {
       t.t = (t.t + t.v * (1 + V.kmh / 60)) % t.len;
-      for (let i = 0; i < 6; i++) { const q = at(t, (t.t - i * 7 + t.len) % t.len); x.fillStyle = 'rgba(' + t.c + ',' + (.55 - i * .08) + ')'; x.beginPath(); x.arc(q[0], q[1], 2.4 - i * .25, 0, 6.283); x.fill(); }
+      for (let i = 0; i < (MOB ? 3 : 6); i++) { const q = at(t, (t.t - i * 7 + t.len) % t.len); x.fillStyle = 'rgba(' + t.c + ',' + (.55 - i * .08) + ')'; x.beginPath(); x.arc(q[0], q[1], 2.4 - i * .25, 0, 6.283); x.fill(); }
     }
   });
   const sp = .5 + V.kmh / 14;
@@ -179,8 +193,9 @@ function hud(now) {
   if (!armed && scrolls && p < .5) { lapStart = now; armed = true; }
   el.t.textContent = fmt(armed ? now - lapStart : lastLap);
 }
+let lf = 0;
 function loop(now) {
-  if (!document.hidden) { hud(now); paint(); }
+  if (!document.hidden && (!MOB || now - lf > 30)) { lf = now; hud(now); paint(); }
   requestAnimationFrame(loop);
 }
 if (RM) paint(); else requestAnimationFrame(loop);
