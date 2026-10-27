@@ -114,8 +114,14 @@ if (!RM) {
   const io = new IntersectionObserver(es => es.forEach(en => {
     if (!en.isIntersecting) return; io.unobserve(en.target);
     const t = en.target, m = t.textContent.match(/^(\D*)(\d+)(.*)$/); if (!m) return;
-    const n = +m[2], t0 = performance.now();
-    (function s(now) { const k = Math.min(1, (now - t0) / 1000), e = 1 - Math.pow(1 - k, 3); t.textContent = m[1] + Math.round(n * e) + m[3]; if (k < 1) requestAnimationFrame(s); })(t0);
+    const n = +m[2], fin = t.textContent; let t0 = null;
+    const done = () => { t.textContent = fin; };
+    setTimeout(done, 1400);
+    requestAnimationFrame(function s(now) {
+      if (t0 === null) t0 = now;
+      const k = Math.max(0, Math.min(1, (now - t0) / 1000)), e = 1 - Math.pow(1 - k, 3);
+      if (k < 1) { t.textContent = m[1] + Math.round(n * e) + m[3]; requestAnimationFrame(s); } else done();
+    });
   }), { threshold: .6 });
   $$('.result-num').forEach(n => io.observe(n));
 }
