@@ -4,11 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Danilo Adryel — In-Field Software Quality Analyst na Stellantis. Diagnóstico de ECUs (UDS/DoIP, CAN/LIN, HIL), análise de causa-raiz e firmware embarcado C/C++. Projetos open source no GitHub.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Danilo Adryel — Automotive Software Quality &amp; Embedded Systems">
+<meta property="og:description" content="Diagnóstico de ECUs, firmware embarcado e telemetria: qualidade de software automotivo e projetos open source.">
+<meta property="og:url" content="https://daniloadryel.vercel.app/">
+<meta name="theme-color" content="#080B0F">
 <title>DARXS // Danilo Adryel — Automotive Software Quality &amp; Embedded Systems</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 
 <style>
@@ -27,9 +32,9 @@
   --text-1:     #e8edf5;
   --text-2:     #8fa3bf;
   --text-3:     #4a6080;
-  --mono:       'Share Tech Mono', monospace;
-  --sans:       'Rajdhani', sans-serif;
-  --display:    'Exo 2', sans-serif;
+  --mono:       'IBM Plex Mono', ui-monospace, monospace;
+  --sans:       'Inter', system-ui, sans-serif;
+  --display:    'Space Grotesk', 'Inter', sans-serif;
   --glow-o:     0 0 20px rgba(255,107,0,0.4);
   --glow-g:     0 0 20px rgba(0,230,118,0.4);
 }
@@ -1943,6 +1948,206 @@ a.node:hover { border-color: var(--accent); }
 .diag-in input { flex: 1; background: none; border: 0; outline: 0; color: var(--text-1); font: inherit; }
 @media (max-width: 600px) { #fab kbd { display: none; } #fab { bottom: 84px; } #diag { bottom: 132px; } }
 @media (prefers-reduced-motion: reduce) { .rv-in, .hero-role.typed::after, #diag.open { animation: none; } .tilt { transition: none; } }
+
+/* ═══ REVISÃO: densidade, resultados e mobile ═══ */
+.exp-lead { font-size: 15px; line-height: 1.55; color: var(--text-1); font-weight: 500; margin: 2px 0 14px; max-width: 70ch; }
+.exp-list { max-width: 78ch; }
+.exp-list li { font-size: 13.5px; color: var(--text-3); }
+.exp-list li strong { color: var(--text-2); }
+.exp-more { margin-top: 10px; }
+.exp-more summary { cursor: pointer; font-family: var(--mono); font-size: 12px; color: var(--accent); padding: 6px 0; list-style: none; }
+.exp-more summary::before { content: '+ '; }
+.exp-more[open] summary::before { content: '− '; }
+.exp-more summary::-webkit-details-marker { display: none; }
+.exp-more[open] > .exp-list { margin-top: 8px; }
+.results { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+.result { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; }
+.result-num { display: block; font-family: var(--display); font-weight: 900; font-size: clamp(30px, 6vw, 40px); line-height: 1; color: var(--green); }
+.result-label { display: block; margin-top: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-2); }
+.results-ctx { grid-column: 1 / -1; font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+.about-text, .specs-block, .exp-card, .tl-content { min-width: 0; }
+.exp-title, .exp-company, .exp-sub, .exp-list li, .spec-val { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .voltage-hud { display: none; }
+  .tl-item { padding-left: 32px; gap: 0; margin-bottom: 24px; }
+  .timeline::before { margin-left: 7px; }
+  .tl-dot { left: 0; width: 15px; height: 15px; top: 20px; }
+  .exp-card { padding: 16px; }
+  .exp-title { font-size: 16px; }
+  .exp-period { white-space: normal; }
+  .exp-header { gap: 8px; }
+  .spec-row { flex-direction: column; }
+  .spec-key { width: 100%; border-right: none; padding: 10px 16px 0; }
+  .spec-val { padding: 4px 16px 10px; }
+  .stat-card { padding: 18px 12px; }
+  .stat-num { font-size: 34px; }
+  .results { grid-template-columns: 1fr; }
+  .exp-tags { gap: 5px; }
+}
+
+/* ═══ REFINO: tokens, foco, movimento, toque ═══ */
+:root { --bg-deep:#080B0F; --bg-card:#10161D; --border:#253342; --accent:#FF6A00; --cyan:#00C8FF; --green:#00D68F; --text-1:#E8EDF3; --text-2:#91A0B3; --text-3:#6B7C90; }
+.tab-btn[aria-current="page"] { color: var(--accent); }
+.tab-btn:focus-visible, .btn:focus-visible, .pf-chip:focus-visible, #fab:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.btn, .tab-btn, .pf-chip { min-height: 44px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+  #particle-canvas { display: none; }
+}
+
+.trace { display: block; width: 100%; max-width: 260px; height: 40px; margin: 10px auto 0; opacity: .85; }
+.trace path { stroke-dasharray: 420; stroke-dashoffset: 420; animation: trace-draw 2.2s ease-out .4s forwards; }
+@keyframes trace-draw { to { stroke-dashoffset: 0; } }
+.trace-cap { text-align: center; font-family: var(--mono); font-size: 10px; color: var(--text-3); margin-top: 6px; }
+@media (max-width: 600px) { .hero-actions { flex-direction: column; align-items: stretch; } .hero-actions .btn { justify-content: center; } }
+
+.cs { margin: 0 0 32px; }
+.cs-title { font-family: var(--mono); font-size: 12px; letter-spacing: 2px; color: var(--accent); margin-bottom: 14px; font-weight: 400; }
+.cs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px; }
+.cs-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 20px; min-width: 0; }
+.cs-top { display: flex; justify-content: space-between; gap: 8px; font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+.cs-cat { color: var(--cyan); }
+.cs-card h4 { font-family: var(--display); font-size: 22px; margin: 6px 0 8px; }
+.cs-prob, .cs-res { font-size: 14px; color: var(--text-2); line-height: 1.6; margin-bottom: 10px; }
+.cs-prob b { color: var(--text-1); }
+.cs-flow { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+.cs-flow span { font-family: var(--mono); font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); border-radius: 2px; color: var(--text-1); }
+.cs-flow span:not(:last-child)::after { content: ' →'; color: var(--accent); }
+.cs-stack { font-family: var(--mono); font-size: 11px; color: var(--text-3); margin-bottom: 12px; }
+.cs-link { color: var(--cyan); font-size: 13px; text-decoration: none; }
+.cs-link:hover { text-decoration: underline; }
+.cs-note { font-family: var(--mono); font-size: 11px; color: var(--text-3); margin-top: 10px; }
+
+.hero-headline { font-family: var(--display); font-weight: 700; font-size: clamp(20px, 3.2vw, 28px); line-height: 1.25; color: var(--text-1); margin: 4px 0 12px; max-width: 24ch; }
+
+.stack-list { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+.stack-row { display: grid; grid-template-columns: 220px 1fr; gap: 6px 32px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+.stack-row h3 { grid-row: span 2; font-family: var(--display); font-size: 17px; font-weight: 700; color: var(--text-1); }
+.stack-row h3 i { color: var(--accent); margin-right: 8px; }
+.stack-tools { font-family: var(--mono); font-size: 13px; color: var(--cyan); line-height: 1.7; }
+.stack-ev { font-size: 14px; color: var(--text-2); }
+.stack-ev a { color: var(--accent); text-decoration: none; white-space: nowrap; }
+.stack-ev a:hover { text-decoration: underline; }
+@media (max-width: 700px) { .stack-row { grid-template-columns: 1fr; } .stack-row h3 { grid-row: auto; } }
+
+/* ═══ TOKENS V2 ═══ */
+:root { --bg-dark:#0D1218; --bg-hover:#171F29; --surface-2:#121922; --text-1:#EDF2F7; --text-2:#9AA9BA; --text-3:#6F8093; --r:4px; --sp-1:8px; --sp-2:16px; --sp-3:24px; --sp-4:40px; }
+body { font-size: 16px; line-height: 1.6; }
+.stat-num, .hero-name, .result-num { font-weight: 700; }
+.cs-title, .stack-tools, .cs-flow span, .cs-stack { letter-spacing: 0; }
+
+.trace { max-width: 320px; height: auto; }
+.dg-box rect { fill: var(--surface-2); stroke: var(--border); }
+.dg-hot rect { stroke: var(--accent); }
+.dg-box text { fill: var(--text-1); font: 500 9px var(--mono); text-anchor: middle; }
+.dg-line { fill: none; stroke: var(--cyan); stroke-width: 1.2; opacity: .7; }
+.dg-sig { stroke: var(--green); stroke-dasharray: 4 4; animation: dg-flow 1.4s linear infinite; }
+.dg-lbl { fill: var(--text-3); font: 400 8px var(--mono); }
+@keyframes dg-flow { to { stroke-dashoffset: -16; } }
+
+.cs-more { margin: 4px 0 14px; border-top: 1px solid var(--border); padding-top: 8px; }
+.cs-more summary { cursor: pointer; font-family: var(--mono); font-size: 12px; color: var(--accent); padding: 6px 0; }
+.cs-more ul { margin: 6px 0 8px 18px; font-size: 13.5px; color: var(--text-2); line-height: 1.6; }
+.cs-lim { font-size: 13px; color: var(--text-3); }
+.cs-lim b { color: var(--text-2); font-weight: 600; }
+
+/* ═══════════ VISUAL V3 — EDITORIAL DE ENGENHARIA (sobrescreve o tema anterior) ═══════════ */
+body::before, body::after, #particle-canvas, #boot, .hero-bg-text, .profile-ring, .hero-visual::before, .tab-btn i, .section-title::after, .brand-hex::after { display: none !important; }
+body { background: var(--bg-deep); }
+.top-bar { background: transparent !important; border: 0 !important; backdrop-filter: none !important; }
+.top-bar::before, .top-bar::after { display: none !important; }
+.brand-hex { background: transparent !important; border: 1px solid var(--text-1) !important; clip-path: none !important; border-radius: 0 !important; animation: none !important; box-shadow: none !important; color: var(--text-1) !important; font-family: var(--mono); font-size: 13px; }
+.tab-nav { background: rgba(8,11,15,.94) !important; border-bottom: 1px solid var(--border) !important; padding: 0 24px; gap: 4px; }
+.tab-btn { font-family: var(--mono) !important; font-size: 12px !important; letter-spacing: .06em !important; text-transform: none !important; border: 0 !important; padding: 0 14px !important; }
+.tab-btn.active, .tab-btn[aria-current="page"] { color: var(--accent) !important; background: transparent !important; }
+.exp-card, .cs-card, .proj-card, .rp, .stat-card, .result, .skill-cat, .cert-card, .edu-card, .contact-item, .award-item, .gh-bar, .specs-block {
+  background: transparent !important; border: 0 !important; border-top: 1px solid var(--border) !important; border-radius: 0 !important;
+  box-shadow: none !important; transform: none !important; }
+.exp-card::before, .exp-card::after, .stat-card::before, .proj-card::before, .rp::before, .rp::after, .cert-card::before { display: none !important; }
+.exp-card, .cs-card { padding: 28px 0 !important; }
+.result { border-left: 0 !important; border-top: 2px solid var(--green) !important; padding: 14px 0 !important; }
+.section-label { font-family: var(--mono) !important; font-size: 12px !important; letter-spacing: .12em; color: var(--accent) !important; }
+.section-title { font-family: var(--display) !important; font-size: clamp(34px, 6vw, 68px) !important; line-height: 1.02 !important; letter-spacing: -.02em; font-weight: 700 !important; margin-bottom: 28px !important; }
+.container { max-width: 1180px; }
+.hero { min-height: auto !important; padding: 72px 0 56px !important; }
+.hero-grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, .8fr) !important; gap: 64px !important; align-items: start !important; }
+.hero-name { font-size: clamp(56px, 11vw, 148px) !important; line-height: .88 !important; letter-spacing: -.035em !important; text-transform: uppercase; font-weight: 700 !important; }
+.hero-name .accent { color: transparent !important; -webkit-text-stroke: 2px var(--accent); }
+.hero-eyebrow, .hero-role { font-family: var(--mono) !important; letter-spacing: .04em !important; }
+.hero-headline { max-width: 20ch; font-size: clamp(24px, 3.4vw, 40px) !important; }
+.hero-visual { order: 2; }
+.profile-img-wrap { width: 100% !important; height: auto !important; border-radius: 0 !important; border: 1px solid var(--border) !important; background: var(--surface-2) !important; overflow: hidden; clip-path: none !important; }
+.profile-img-wrap img { width: 100% !important; height: auto !important; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 0 !important; filter: grayscale(.25) contrast(1.05); }
+.profile-ring-wrap { width: 100% !important; height: auto !important; margin: 0 !important; }
+.trace { margin: 16px 0 0 !important; max-width: 100% !important; }
+.trace-cap { text-align: left !important; }
+.tag { background: transparent !important; border: 0 !important; border-bottom: 1px solid var(--border) !important; border-radius: 0 !important; padding: 2px 0 !important; margin-right: 10px; color: var(--text-2) !important; font-family: var(--mono); }
+.btn { border-radius: 0 !important; box-shadow: none !important; text-transform: none !important; letter-spacing: .02em !important; font-family: var(--mono); }
+.btn-primary { background: var(--accent) !important; color: #080B0F !important; border: 1px solid var(--accent) !important; }
+.btn-outline { background: transparent !important; border: 1px solid var(--border) !important; color: var(--text-1) !important; }
+.btn:hover { transform: none !important; filter: brightness(1.1); }
+.tl-dot { border-radius: 0 !important; width: 9px !important; height: 9px !important; box-shadow: none !important; animation: none !important; }
+.timeline::before { background: var(--border) !important; }
+.stats-grid { gap: 0 !important; }
+.stat-card { padding: 18px 0 !important; text-align: left !important; }
+.stat-num { color: var(--text-1) !important; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; } .hero-visual { max-width: 320px; } }
+
+.gauge-wrap { display: block !important; position: static !important; width: 100% !important; height: auto !important; margin-top: 20px !important; }
+.gauge-wrap > svg:first-child { display: none !important; }
+.profile-placeholder { aspect-ratio: 4 / 5; width: 100%; font-family: var(--display); font-size: 64px; background: var(--surface-2); color: var(--text-3); }
+.hero-badges { display: none !important; }
+
+/* ═══════════ VISUAL V4 — MOTORSPORT / TELEMETRIA ═══════════ */
+body { background: #080B0F radial-gradient(circle at 1px 1px, rgba(255,255,255,.035) 1px, transparent 0) 0 0 / 6px 6px; }
+.tab-nav { border-bottom: 0 !important; position: fixed; }
+.tab-nav::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, var(--accent) 0 180px, var(--border) 180px); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+.tab-btn { font-style: italic; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: .08em !important; }
+.brand-name { font-style: italic; font-weight: 700; letter-spacing: .04em; }
+.brand-hex { transform: skewX(-12deg); background: var(--accent) !important; border-color: var(--accent) !important; color: #080B0F !important; }
+/* velocidade: tipografia inclinada */
+.hero-name, .section-title, .stat-num, .result-num { transform: skewX(-7deg); transform-origin: left bottom; display: inline-block; }
+.hero-name { font-size: clamp(60px, 12vw, 164px) !important; }
+.hero-name .accent { -webkit-text-stroke: 2px var(--accent); }
+.hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background: repeating-linear-gradient(-62deg, transparent 0 46px, rgba(255,106,0,.07) 46px 48px);
+  -webkit-mask-image: linear-gradient(90deg, #000, transparent 70%); mask-image: linear-gradient(90deg, #000, transparent 70%); }
+.hero { position: relative; }
+/* shift lights */
+.shift { display: flex; gap: 6px; margin-bottom: 22px; }
+.shift i { width: 28px; height: 8px; transform: skewX(-20deg); background: var(--border); animation: sl-on .12s forwards; animation-delay: calc(var(--n) * 90ms + 300ms); }
+@keyframes sl-on { to { background: var(--lc, var(--green)); box-shadow: 0 0 8px var(--lc, var(--green)); } }
+.shift i:nth-child(n+5) { --lc: var(--accent); } .shift i:nth-child(n+10) { --lc: var(--cyan); }
+/* cartões com cantos chanfrados e filete laranja */
+.exp-card, .cs-card, .rp, .proj-card, .cert-card, .edu-card, .skill-cat, .contact-item, .award-item {
+  background: var(--surface-2) !important; border: 1px solid var(--border) !important; border-left: 3px solid var(--accent) !important;
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%); padding: 24px 24px 24px 22px !important; }
+.exp-card:hover, .cs-card:hover, .rp:hover, .proj-card:hover { background: var(--bg-hover) !important; border-left-color: var(--green) !important; }
+.stack-row { background: transparent; border-left: 3px solid var(--accent); padding-left: 20px; }
+.stack-tools { color: var(--cyan); }
+.stat-card { background: var(--surface-2) !important; border-top: 0 !important; border-left: 3px solid var(--accent) !important; padding: 16px 18px !important; }
+.stat-num { color: var(--accent) !important; }
+.result { background: var(--surface-2) !important; border-top: 0 !important; border-left: 3px solid var(--green) !important; padding: 14px 16px !important; }
+/* rótulo de setor + bandeira quadriculada */
+.section-label::before { content: ''; display: inline-block; width: 32px; height: 12px; margin-right: 10px; vertical-align: -1px; background: conic-gradient(#EDF2F7 25%, #080B0F 0 50%, #EDF2F7 0 75%, #080B0F 0) 0 0 / 8px 8px; opacity: .9; }
+.section-label { font-style: italic; text-transform: uppercase; }
+/* botões chanfrados */
+.btn { clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%); padding-left: 26px !important; padding-right: 26px !important; font-weight: 600; text-transform: uppercase !important; letter-spacing: .08em !important; border: 0 !important; }
+.btn-primary { background: var(--accent) !important; }
+.btn-outline { background: var(--surface-2) !important; box-shadow: inset 0 0 0 1px var(--border) !important; }
+.btn-outline:hover { background: var(--bg-hover) !important; }
+.tag { color: var(--cyan) !important; }
+.tag-green { color: var(--green) !important; }
+/* telemetria */
+.tele { display: block; width: 100%; margin-top: 18px; }
+.tl-grid path { stroke: var(--border); stroke-width: 1; fill: none; }
+.tele path:not(.tl-grid *) { fill: none; stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.tl-spd { stroke: var(--accent); } .tl-thr { stroke: var(--green); } .tl-brk { stroke: var(--cyan); }
+.tele text { font: 500 9px var(--mono); fill: var(--accent); } .tele .t2 { fill: var(--green); } .tele .t3 { fill: var(--cyan); }
+.tele path[class^="tl-"] { stroke-dasharray: 700; stroke-dashoffset: 700; animation: trace-draw 2.4s ease-out .6s forwards; }
+.profile-img-wrap { clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%); border-color: var(--accent) !important; }
+@media (prefers-reduced-motion: reduce) { .shift i { animation: none; background: var(--lc, var(--green)); } .tele path[class^="tl-"] { animation: none; stroke-dashoffset: 0; } }
+@media (max-width: 600px) { .shift i { width: 18px; } .hero-name { font-size: clamp(48px, 15vw, 72px) !important; } }
 </style>
 </head>
 <body>
@@ -1966,7 +2171,7 @@ a.node:hover { border-color: var(--accent); }
 </div>
 
 <!-- HUD WIDGET -->
-<div class="voltage-hud" id="hud">
+<div class="voltage-hud" id="hud" aria-hidden="true" title="Indicadores demonstrativos, sem fonte de dados real">
   <div class="hud-row"><span class="hud-label">SYS</span><span class="hud-val" id="hud-sys">ONLINE</span></div>
   <div class="hud-row"><span class="hud-label">V_BUS</span><span class="hud-val orange" id="hud-v">12.4V</span></div>
   <div class="hud-row"><span class="hud-label">CAN</span><span class="hud-val cyan" id="hud-can">500kbps</span></div>
@@ -1989,7 +2194,7 @@ a.node:hover { border-color: var(--accent); }
 </header>
 
 <!-- TAB NAV -->
-<nav class="tab-nav" id="tab-nav">
+<nav class="tab-nav" id="tab-nav" aria-label="Seções do portfólio">
   <button class="tab-btn active" data-tab="home" onclick="switchTab('home')">
     <i class="fas fa-home"></i> Início
   </button>
@@ -2013,19 +2218,13 @@ a.node:hover { border-color: var(--accent); }
   </button>
 </nav>
 
-<!-- CAN STREAM TICKER -->
-<div style="position:fixed;top:104px;left:0;right:0;height:20px;background:rgba(5,7,9,0.9);border-bottom:1px solid rgba(255,107,0,0.1);overflow:hidden;z-index:998;display:flex;align-items:center;">
-  <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(74,96,128,0.7);white-space:nowrap;animation:can-scroll 20s linear infinite;padding-left:100%;">
-    CAN_ID:0x7DF&nbsp;&nbsp;DATA:[02 10 03 00 00 00 00 00]&nbsp;&nbsp;›&nbsp;&nbsp;CAN_ID:0x7E8&nbsp;&nbsp;DATA:[06 50 03 00 19 01 F4 00]&nbsp;&nbsp;›&nbsp;&nbsp;UDS:SERVICE_0x22&nbsp;&nbsp;DID:0xF190&nbsp;&nbsp;VIN_READ_OK&nbsp;&nbsp;›&nbsp;&nbsp;DTC:P0420&nbsp;&nbsp;STATUS:PENDING&nbsp;&nbsp;›&nbsp;&nbsp;ECU:BCM&nbsp;&nbsp;ADDR:0x726&nbsp;&nbsp;RESP:0x72E&nbsp;&nbsp;›&nbsp;&nbsp;FOTA:UPDATE_CHECK&nbsp;&nbsp;SW_VER:2.4.1-beta&nbsp;&nbsp;›&nbsp;&nbsp;DIAG:SESSION_EXTENDED&nbsp;&nbsp;SECURITY_LEVEL:0x01&nbsp;&nbsp;›&nbsp;&nbsp;LIN_ID:0x3C&nbsp;&nbsp;FRAME:[A1 B2 C3 D4]&nbsp;&nbsp;›&nbsp;&nbsp;OBD2:PID_0x0D&nbsp;&nbsp;SPEED:87km/h&nbsp;&nbsp;›&nbsp;&nbsp;INFOTAINMENT:SWAT_ACTIVE&nbsp;&nbsp;MODULE:RADIO_HEAD_UNIT
-  </div>
-</div>
-
 <style>
 @keyframes can-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-.main { margin-top: 124px !important; }
+.main { margin-top: 104px !important; }
+#hud, .top-status { display: none !important; }
 </style>
 
 <!-- MAIN -->
@@ -2038,6 +2237,7 @@ a.node:hover { border-color: var(--accent); }
       <div class="container">
         <div class="hero-grid">
           <div class="hero-left">
+            <div class="shift" aria-hidden="true" title="Elemento decorativo"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i><i style="--n:6"></i><i style="--n:7"></i><i style="--n:8"></i><i style="--n:9"></i><i style="--n:10"></i><i style="--n:11"></i><i style="--n:12"></i><i style="--n:13"></i></div>
             <div class="hero-eyebrow">In-Field Software Quality Analyst · ACT Digital @ Stellantis South America</div>
             <h1 class="hero-name">
               Danilo<br><span class="accent">Adryel</span>
@@ -2047,9 +2247,8 @@ a.node:hover { border-color: var(--accent); }
               <div class="status-dot"></div>
               Stellantis South America · Betim, MG
             </div>
-            <p class="hero-desc">
-              Investigo falhas de software automotivo em campo, rastreio até a causa-raiz e acompanho a ação corretiva até a produção seriada. Hoje cuido da qualidade de campo de áudio e antena; antes, de diagnóstico de ECUs multicore. Base em firmware C/C++ e dados com Python e Power BI.
-            </p>
+            <p class="hero-headline">Da eletrônica ao software. Dos dados à performance.</p>
+            <p class="hero-desc">Desenvolvo e valido soluções que conectam eletrônica, sistemas embarcados, diagnóstico automotivo e análise de dados, transformando problemas técnicos em sistemas confiáveis.</p>
             <div class="hero-tags">
               <span class="tag"><i class="fas fa-car"></i> Automotive ECU</span>
               <span class="tag"><i class="fas fa-microchip"></i> Embedded C/C++</span>
@@ -2059,7 +2258,10 @@ a.node:hover { border-color: var(--accent); }
             </div>
             <div class="hero-actions">
               <button class="btn btn-primary" onclick="switchTab('projects')">
-                <i class="fab fa-github"></i> Ver Projetos
+                <i class="fab fa-github"></i> Explorar projetos
+              </button>
+              <button class="btn btn-outline" onclick="switchTab('experience')">
+                <i class="fas fa-briefcase"></i> Experiência profissional
               </button>
               <button class="btn btn-outline" onclick="switchTab('contact')">
                 <i class="fas fa-satellite-dish"></i> Contato
@@ -2093,15 +2295,34 @@ a.node:hover { border-color: var(--accent); }
               </div>
             </div>
             <div class="gauge-wrap" id="gauge" title="Passe o mouse para acelerar">
-              <svg viewBox="0 0 200 200" role="img" aria-label="Tacômetro decorativo">
+              <svg viewBox="0 0 200 200" role="img" aria-label="Tacômetro decorativo, valores demonstrativos">
                 <circle cx="100" cy="100" r="92" class="g-face"/>
                 <path d="M 177.3 79.3 A 80 80 0 0 1 169.3 140.0" class="g-red"/>
                 <g id="g-ticks"></g>
                 <g id="g-needle"><line x1="100" y1="108" x2="100" y2="32" class="g-needle"/></g>
                 <circle cx="100" cy="100" r="7" class="g-hub"/>
                 <text x="100" y="146" class="g-val" id="g-rpm">0</text>
-                <text x="100" y="160" class="g-unit">RPM · ECU_ENGINE</text>
+                <text x="100" y="160" class="g-unit">RPM · DEMO</text>
               </svg>
+              <svg class="trace" viewBox="0 0 260 90" role="img" aria-label="Diagrama ilustrativo: sensores enviam sinais por CAN a uma ECU, que alimenta software de análise">
+                <g class="dg-box"><rect x="2" y="8" width="62" height="26" rx="3"/><text x="33" y="25">SENSORES</text>
+                <rect x="2" y="48" width="62" height="26" rx="3"/><text x="33" y="65">ATUADORES</text></g>
+                <g class="dg-box dg-hot"><rect x="99" y="28" width="62" height="34" rx="3"/><text x="130" y="49">ECU</text></g>
+                <g class="dg-box"><rect x="196" y="28" width="62" height="34" rx="3"/><text x="227" y="49">SOFTWARE</text></g>
+                <path class="dg-line" d="M64 21 H82 V40 H99 M64 61 H82 V50 H99"/>
+                <path class="dg-line dg-sig" d="M161 45 H196"/>
+                <text class="dg-lbl" x="80" y="84">CAN</text><text class="dg-lbl" x="178" y="84">DADOS</text>
+              </svg>
+              <div class="trace-cap">// diagrama ilustrativo · não representa um sistema ou medição reais</div>
+              <svg class="tele" viewBox="0 0 320 120" role="img" aria-label="Gráfico ilustrativo de telemetria: velocidade, acelerador e freio ao longo de uma volta. Dados de demonstração.">
+                <g class="tl-grid"><path d="M0 30H320M0 60H320M0 90H320M80 0V120M160 0V120M240 0V120"/></g>
+                <path class="tl-spd" d="M0 80 C30 20 55 20 80 50 S115 100 140 70 S190 15 230 30 S285 80 320 40"/>
+                <path class="tl-thr" d="M0 105 H40 V70 H110 V105 H140 V60 H215 V108 H250 V75 H320"/>
+                <path class="tl-brk" d="M0 118 H108 V102 H112 V118 H212 V104 H216 V118 H320"/>
+                <text x="4" y="12">VEL</text><text x="34" y="12" class="t2">ACEL</text><text x="72" y="12" class="t3">FREIO</text>
+              </svg>
+              <div class="trace-cap">// telemetria ilustrativa · dados de demonstração</div>
+              
             </div>
             <div class="hero-badges">
               <div class="hbadge"><i class="fas fa-car"></i> Automotive</div>
@@ -2131,7 +2352,13 @@ a.node:hover { border-color: var(--accent); }
           <div class="about-text">
             <p>Sou <strong>In-Field Software Quality Analyst</strong> na <strong>Stellantis South America</strong> (via ACT Digital), na interseção entre diagnóstico de ECUs, software embarcado e qualidade de produto em campo. Meu foco é transformar falhas complexas e dados de campo em soluções de engenharia que aumentam a confiabilidade.</p>
             <p>Hoje respondo pela qualidade de campo do <strong>sistema de áudio e da antena</strong>: KPIs de garantia (3MIS/12MIS, PPM, FTY), peças devolvidas (PRC) e análises de fornecedores. Estou assumindo as centrais multimídia da <strong>Ram Dakota</strong> e da <strong>Fiat Titano</strong>. Antes, atuei no diagnóstico de ECUs multicore com <strong>UDS, DoIP, CAN/LIN, HIL</strong> e homologação de campanhas <strong>FOTA/AOTA/MOTA</strong>.</p>
-            <p>Minha base vem do <strong>Mangue Baja SAE (UFPE)</strong>, onde fui de desenvolvedor a coordenador de sistemas embarcados e especialista em qualidade: ECUs, PCBs, firmware, telemetria e validação em pista. Contribuí para uma <strong>redução de 45% no tempo total de testes</strong> e <strong>13% de melhora no desempenho do veículo</strong>. O código desse trabalho está público na aba <a href="#" onclick="switchTab('projects'); return false;" style="color:var(--cyan);">Projetos</a>.</p>
+            <p>Minha base vem do <strong>Mangue Baja SAE (UFPE)</strong>, onde fui de desenvolvedor a coordenador de sistemas embarcados e especialista em qualidade: ECUs, PCBs, firmware, telemetria e validação em pista. O código desse trabalho está público na aba <a href="#" onclick="switchTab('projects'); return false;" style="color:var(--cyan);">Projetos</a>.</p>
+            <!-- TODO: incluir a base de comparação (ex.: ciclo/temporada, ensaio de referência) em .results-ctx -->
+            <div class="results" role="group" aria-label="Resultados no Mangue Baja SAE">
+              <div class="result"><span class="result-num">−45%</span><span class="result-label">tempo total de testes</span></div>
+              <div class="result"><span class="result-num">+13%</span><span class="result-label">desempenho do veículo</span></div>
+              <div class="results-ctx">// Resultados no Mangue Baja SAE · UFPE</div>
+            </div>
           </div>
           <div class="specs-block">
             <div class="specs-header">// FICHA TÉCNICA</div>
@@ -2169,19 +2396,19 @@ a.node:hover { border-color: var(--accent); }
         <!-- Stats -->
         <div class="stats-grid" style="margin-bottom: 40px;">
           <div class="stat-card">
-            <span class="stat-num"><span class="counter" data-target="3">0</span><span class="stat-suffix">+</span></span>
+            <span class="stat-num"><span class="counter" data-target="3">3</span><span class="stat-suffix">+</span></span>
             <span class="stat-label">Anos Exp.</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num"><span class="counter" data-target="9">0</span><span class="stat-suffix"></span></span>
+            <span class="stat-num"><span class="counter" data-target="9">9</span><span class="stat-suffix"></span></span>
             <span class="stat-label">Repos no GitHub</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num"><span class="counter" data-target="11">0</span><span class="stat-suffix"></span></span>
+            <span class="stat-num"><span class="counter" data-target="11">11</span><span class="stat-suffix"></span></span>
             <span class="stat-label">Certificações</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num"><span class="counter" data-target="6">0</span><span class="stat-suffix"></span></span>
+            <span class="stat-num"><span class="counter" data-target="6">6</span><span class="stat-suffix"></span></span>
             <span class="stat-label">Prêmios SAE</span>
           </div>
         </div>
@@ -2227,13 +2454,17 @@ a.node:hover { border-color: var(--accent); }
                   </div>
                   <div class="exp-period current">Dez 2025 — Atual · 11 meses</div>
                 </div>
+                <p class="exp-lead">Qualidade de campo de áudio e antena: leva cada falha recorrente da primeira análise até a prova de eficácia na linha.</p>
                 <ul class="exp-list">
-                  <li><strong>Qualidade de campo do áudio e da antena:</strong> tweeter, woofer, subwoofer, alto-falantes full range e mid range, em produção seriada. Conduz a resolução reativa de problemas da primeira análise até a prova de eficácia da ação na linha. Assumindo as centrais multimídia da <strong>Ram Dakota</strong> e da <strong>Fiat Titano</strong>.</li>
-                  <li><strong>KPIs de garantia (3MIS/12MIS):</strong> consolida retornos PRC e dados de campo para priorizar falhas recorrentes, reduzir <strong>PPM</strong> e elevar o <strong>First Time Yield (FTY)</strong>.</li>
-                  <li><strong>Gestão ponta a ponta de issues</strong> com rastreabilidade de evidências e decisões; acompanha análises de fornecedores e valida a consistência das conclusões contra os dados de campo.</li>
-                  <li><strong>Dashboards Power BI</strong> (Power Query, DAX, ETL) com visibilidade de issues, tendências de diagnóstico, KPIs e Lessons Learned.</li>
-                  <li><strong>Interface</strong> entre Engenharia de Produto, Desenvolvimento, Manufatura, Pós-venda, Fornecedores e Qualidade, escalando problemas críticos e alinhando contenções.</li>
-                </ul>
+<li><strong>Qualidade de campo do áudio e da antena:</strong> tweeter, woofer, subwoofer, alto-falantes full range e mid range, em produção seriada. Assumindo as centrais multimídia da <strong>Ram Dakota</strong> e da <strong>Fiat Titano</strong>.</li>
+<li><strong>KPIs de garantia (3MIS/12MIS):</strong> consolida retornos PRC e dados de campo para priorizar falhas recorrentes, reduzir <strong>PPM</strong> e elevar o <strong>First Time Yield (FTY)</strong>.</li>
+<li><strong>Gestão ponta a ponta de issues</strong> com rastreabilidade de evidências e decisões; acompanha análises de fornecedores e valida a consistência das conclusões contra os dados de campo.</li>
+</ul>
+<details class="exp-more"><summary>Ver mais detalhes (2)</summary>
+<ul class="exp-list">
+<li><strong>Dashboards Power BI</strong> (Power Query, DAX, ETL) com visibilidade de issues, tendências de diagnóstico, KPIs e Lessons Learned.</li>
+<li><strong>Interface</strong> entre Engenharia de Produto, Desenvolvimento, Manufatura, Pós-venda, Fornecedores e Qualidade, escalando problemas críticos e alinhando contenções.</li>
+</ul></details>
                 <div class="exp-tags">
                   <span class="tag">8D</span>
                   <span class="tag">FMEA</span>
@@ -2259,14 +2490,18 @@ a.node:hover { border-color: var(--accent); }
                   </div>
                   <div class="exp-period">Dez 2025 — Out 2026 · 11 meses</div>
                 </div>
+                <p class="exp-lead">Reprodução de falhas complexas em ECUs e rastreio até a causa-raiz, com suporte técnico à Reatividade, concessionárias e clientes.</p>
                 <ul class="exp-list">
-                  <li><strong>Suporte técnico de nível superior</strong> à Reatividade, concessionárias e clientes: reprodução de falhas complexas sob condições controladas e rastreio até a causa-raiz.</li>
-                  <li><strong>Bancada, HIL e veículo</strong> em ECUs multicore (Infotainment, IPC, TBM); análise de peças devolvidas (PRC), validando a origem do defeito ou a ausência de falha (NFF).</li>
-                  <li><strong>UDS (ISO 14229) sobre CAN e DoIP:</strong> sessões, DIDs, rotinas e análise de DTC/Snapshot/Extended Data via ODX/CDD, com DIAglyser, DIAnalyser, CDA e CANalyzer.</li>
-                  <li><strong>Redes CAN/LIN (ISO 11898/17987):</strong> bus load, latência, jitter e integridade de frames, decodificando DBC, LDF, ARXML e arquivos .car/.par.</li>
-                  <li><strong>Testes e OTA:</strong> procedimentos funcionais, integração, regressão, estresse, Sleep/Wake-up e corrente quiescente; ECU flashing com validação pós-reflash; homologação de campanhas <strong>FOTA, AOTA e MOTA</strong> (bootloader, reflash fail-safe, rollback).</li>
-                  <li><strong>Causa-raiz:</strong> crash logs, core dumps e interações hardware/software com RCA, 8D, FMEA e Fault Injection.</li>
-                </ul>
+<li><strong>Suporte técnico de nível superior</strong> à Reatividade, concessionárias e clientes: reprodução de falhas complexas sob condições controladas e rastreio até a causa-raiz.</li>
+<li><strong>Bancada, HIL e veículo</strong> em ECUs multicore (Infotainment, IPC, TBM); análise de peças devolvidas (PRC), validando a origem do defeito ou a ausência de falha (NFF).</li>
+<li><strong>UDS (ISO 14229) sobre CAN e DoIP:</strong> sessões, DIDs, rotinas e análise de DTC/Snapshot/Extended Data via ODX/CDD, com DIAglyser, DIAnalyser, CDA e CANalyzer.</li>
+</ul>
+<details class="exp-more"><summary>Ver mais detalhes (3)</summary>
+<ul class="exp-list">
+<li><strong>Redes CAN/LIN (ISO 11898/17987):</strong> bus load, latência, jitter e integridade de frames, decodificando DBC, LDF, ARXML e arquivos .car/.par.</li>
+<li><strong>Testes e OTA:</strong> procedimentos funcionais, integração, regressão, estresse, Sleep/Wake-up e corrente quiescente; ECU flashing com validação pós-reflash; homologação de campanhas <strong>FOTA, AOTA e MOTA</strong> (bootloader, reflash fail-safe, rollback).</li>
+<li><strong>Causa-raiz:</strong> crash logs, core dumps e interações hardware/software com RCA, 8D, FMEA e Fault Injection.</li>
+</ul></details>
                 <div class="exp-tags">
                   <span class="tag">CANalyzer</span>
                   <span class="tag">CANdela</span>
@@ -2293,14 +2528,18 @@ a.node:hover { border-color: var(--accent); }
                   </div>
                   <div class="exp-period">Mai 2025 — Nov 2025 · 7 meses</div>
                 </div>
+                <p class="exp-lead">Integridade dos dados e padronização de KPIs de manutenção (MTTR, MTBF) para decisões baseadas em evidência.</p>
                 <ul class="exp-list">
-                  <li><strong>Governança de Dados, Confiabilidade & Qualidade de Manutenção:</strong> Atuação em rotinas de governança de dados e confiabilidade, realizando validação, controle e auditoria de consistência e completude de dados nos sistemas SPW (<strong>SFM, SPS</strong>). Garantia da integridade dos dados e confiabilidade de KPIs para análise de performance, manutenção preditiva e tomada de decisão orientada a dados.</li>
-                  <li><strong>Gestão de Manutenção & Padronização de KPIs:</strong> Contribuição para a implementação e melhoria contínua de ferramentas de Gestão Visual de Manutenção, padronizando KPIs estratégicos como <strong>MTTR, MTBF, Disponibilidade e Custo de Manutenção</strong>, habilitando monitoramento em tempo real, rastreabilidade e análise de performance operacional.</li>
-                  <li><strong>Dashboards Power BI & Integração de Dados:</strong> Colaboração no desenvolvimento e otimização de dashboards em <strong>Power BI</strong>, integrando dados do <strong>SAP PM</strong>, Excel e bases de dados locais usando processos ETL, <strong>Power Query e DAX</strong>. Entrega de métricas consolidadas, indicadores visuais e visões analíticas para suporte a análise de falhas, monitoramento de tendências e confiabilidade de manutenção.</li>
-                  <li><strong>Relatórios Técnicos & Executivos:</strong> Suporte à preparação de relatórios técnicos e executivos por meio de análise de séries temporais, comparações históricas e indicadores estratégicos de performance, fornecendo insights acionáveis para equipes de engenharia, manutenção e gestão de ativos.</li>
-                  <li><strong>Análise de Falhas & Melhoria Contínua:</strong> Apoio à aplicação de metodologias estruturadas de análise de falha (<strong>5 Porquês, RCA, Ishikawa, FTA</strong>) para identificar causas raiz, priorizar falhas críticas e definir planos de ação corretivos e preventivos.</li>
-                  <li><strong>Monitoramento de Emergency Work Orders (EWO):</strong> Suporte ao monitoramento e análise de EWOs, mantendo e atualizando dashboards Power BI, identificando padrões recorrentes, rastreando eventos críticos e suportando ações corretivas de manutenção rápidas.</li>
-                </ul>
+<li><strong>Governança de Dados, Confiabilidade & Qualidade de Manutenção:</strong> Atuação em rotinas de governança de dados e confiabilidade, realizando validação, controle e auditoria de consistência e completude de dados nos sistemas SPW (<strong>SFM, SPS</strong>). Garantia da integridade dos dados e confiabilidade de KPIs para análise de performance, manutenção preditiva e tomada de decisão orientada a dados.</li>
+<li><strong>Gestão de Manutenção & Padronização de KPIs:</strong> Contribuição para a implementação e melhoria contínua de ferramentas de Gestão Visual de Manutenção, padronizando KPIs estratégicos como <strong>MTTR, MTBF, Disponibilidade e Custo de Manutenção</strong>, habilitando monitoramento em tempo real, rastreabilidade e análise de performance operacional.</li>
+<li><strong>Dashboards Power BI & Integração de Dados:</strong> Colaboração no desenvolvimento e otimização de dashboards em <strong>Power BI</strong>, integrando dados do <strong>SAP PM</strong>, Excel e bases de dados locais usando processos ETL, <strong>Power Query e DAX</strong>. Entrega de métricas consolidadas, indicadores visuais e visões analíticas para suporte a análise de falhas, monitoramento de tendências e confiabilidade de manutenção.</li>
+</ul>
+<details class="exp-more"><summary>Ver mais detalhes (3)</summary>
+<ul class="exp-list">
+<li><strong>Relatórios Técnicos & Executivos:</strong> Suporte à preparação de relatórios técnicos e executivos por meio de análise de séries temporais, comparações históricas e indicadores estratégicos de performance, fornecendo insights acionáveis para equipes de engenharia, manutenção e gestão de ativos.</li>
+<li><strong>Análise de Falhas & Melhoria Contínua:</strong> Apoio à aplicação de metodologias estruturadas de análise de falha (<strong>5 Porquês, RCA, Ishikawa, FTA</strong>) para identificar causas raiz, priorizar falhas críticas e definir planos de ação corretivos e preventivos.</li>
+<li><strong>Monitoramento de Emergency Work Orders (EWO):</strong> Suporte ao monitoramento e análise de EWOs, mantendo e atualizando dashboards Power BI, identificando padrões recorrentes, rastreando eventos críticos e suportando ações corretivas de manutenção rápidas.</li>
+</ul></details>
                 <div class="exp-tags">
                   <span class="tag">Power BI</span>
                   <span class="tag">SAP PM</span>
@@ -2328,16 +2567,20 @@ a.node:hover { border-color: var(--accent); }
                   </div>
                   <div class="exp-period">Nov 2024 — Mai 2025 · 7 meses</div>
                 </div>
+                <p class="exp-lead">Planejamento e controle de ordens de manutenção no SAP PM para minimizar paradas não planejadas.</p>
                 <ul class="exp-list">
-                  <li><strong>Suporte ao Planejamento de Manutenção:</strong> Suporte ao desenvolvimento, estruturação e otimização de planos de manutenção preventiva e corretiva, contribuindo para o agendamento eficiente de atividades alinhado às metas de confiabilidade e disponibilidade de equipamentos.</li>
-                  <li><strong>Controle e Monitoramento de Ordens de Trabalho (SAP PM):</strong> Participação na criação, atualização e rastreamento de ordens de trabalho no sistema <strong>SAP PM</strong>, assegurando fluxo de trabalho correto, cumprimento de prazos e execução de acordo com os planos de manutenção aprovados.</li>
-                  <li><strong>Gestão de Cronograma e Recursos:</strong> Apoio ao monitoramento de cronogramas de manutenção, suportando o alinhamento de recursos, materiais e mão de obra para cumprir prazos e minimizar tempo de parada não planejado.</li>
-                  <li><strong>Análise de Indicadores de Performance (KPI):</strong> Suporte à coleta e análise de KPIs de manutenção como <strong>MTTR e MTBF</strong>, fornecendo insights orientados a dados para avaliar a eficiência da manutenção e suportar decisões operacionais e estratégicas.</li>
-                  <li><strong>Análise de Dados e Otimização de Planejamento:</strong> Utilização de dashboards e relatórios <strong>Power BI</strong> para monitorar Emergency Work Orders (EWOs) e padrões de falha, suportando a identificação de oportunidades de melhoria em estratégias e processos de manutenção.</li>
-                  <li><strong>SAP PM & Sistemas de Manutenção:</strong> Desenvolvimento de experiência hands-on em SAP PM para gerenciamento de ordens de serviço e planejamento de manutenção, fortalecendo o controle operacional e as capacidades de otimização.</li>
-                  <li><strong>Power BI & Suporte à Decisão Orientada a Dados:</strong> Aplicação de dashboards e relatórios de performance em Power BI para análise de EWOs e KPIs de manutenção, aprimorando habilidades analíticas e suportando decisões de manutenção orientadas a dados.</li>
-                  <li><strong>Gestão de Ativos & Confiabilidade Operacional:</strong> Participação em atividades de gestão de ativos industriais, suportando práticas de monitoramento e controle de performance para melhorar confiabilidade operacional, disponibilidade e eficiência.</li>
-                </ul>
+<li><strong>Suporte ao Planejamento de Manutenção:</strong> Suporte ao desenvolvimento, estruturação e otimização de planos de manutenção preventiva e corretiva, contribuindo para o agendamento eficiente de atividades alinhado às metas de confiabilidade e disponibilidade de equipamentos.</li>
+<li><strong>Controle e Monitoramento de Ordens de Trabalho (SAP PM):</strong> Participação na criação, atualização e rastreamento de ordens de trabalho no sistema <strong>SAP PM</strong>, assegurando fluxo de trabalho correto, cumprimento de prazos e execução de acordo com os planos de manutenção aprovados.</li>
+<li><strong>Gestão de Cronograma e Recursos:</strong> Apoio ao monitoramento de cronogramas de manutenção, suportando o alinhamento de recursos, materiais e mão de obra para cumprir prazos e minimizar tempo de parada não planejado.</li>
+</ul>
+<details class="exp-more"><summary>Ver mais detalhes (5)</summary>
+<ul class="exp-list">
+<li><strong>Análise de Indicadores de Performance (KPI):</strong> Suporte à coleta e análise de KPIs de manutenção como <strong>MTTR e MTBF</strong>, fornecendo insights orientados a dados para avaliar a eficiência da manutenção e suportar decisões operacionais e estratégicas.</li>
+<li><strong>Análise de Dados e Otimização de Planejamento:</strong> Utilização de dashboards e relatórios <strong>Power BI</strong> para monitorar Emergency Work Orders (EWOs) e padrões de falha, suportando a identificação de oportunidades de melhoria em estratégias e processos de manutenção.</li>
+<li><strong>SAP PM & Sistemas de Manutenção:</strong> Desenvolvimento de experiência hands-on em SAP PM para gerenciamento de ordens de serviço e planejamento de manutenção, fortalecendo o controle operacional e as capacidades de otimização.</li>
+<li><strong>Power BI & Suporte à Decisão Orientada a Dados:</strong> Aplicação de dashboards e relatórios de performance em Power BI para análise de EWOs e KPIs de manutenção, aprimorando habilidades analíticas e suportando decisões de manutenção orientadas a dados.</li>
+<li><strong>Gestão de Ativos & Confiabilidade Operacional:</strong> Participação em atividades de gestão de ativos industriais, suportando práticas de monitoramento e controle de performance para melhorar confiabilidade operacional, disponibilidade e eficiência.</li>
+</ul></details>
                 <div class="exp-tags">
                   <span class="tag">SAP PM</span>
                   <span class="tag">Power BI</span>
@@ -2363,6 +2606,7 @@ a.node:hover { border-color: var(--accent); }
                   </div>
                   <div class="exp-period">Abr 2025 — Ago 2026 · 1 ano 5 meses</div>
                 </div>
+                <p class="exp-lead">Qualidade da arquitetura E/E do veículo: diagnóstico de falhas críticas em pista e contenção imediata com RCA estruturado.</p>
                 <ul class="exp-list">
                   <li><strong>Quality Assurance & E/E Architecture:</strong> Atuação como Quality Specialist com suporte técnico no desenvolvimento e validação dos sistemas elétricos e eletrônicos do veículo off-road, garantindo conformidade estrita e confiabilidade sistêmica da arquitetura E/E.</li>
                   <li><strong>Signal Integrity & System Integration (DAQ):</strong> Supervisão da integração física e lógica de módulos embarcados, sensores e atuadores.</li>
@@ -2394,13 +2638,17 @@ a.node:hover { border-color: var(--accent); }
                   </div>
                   <div class="exp-period">Abr 2024 — Abr 2025 · 1 ano 1 mês</div>
                 </div>
+                <p class="exp-lead">Coordenação da arquitetura E/E e das ECUs, do levantamento de requisitos à validação final em pista.</p>
                 <ul class="exp-list">
-                  <li><strong>Technical Leadership & E/E Architecture:</strong> Liderança do desenvolvimento de sistemas embarcados e ECUs para veículos off-road. Coordenação completa da arquitetura Elétrico/Eletrônica (E/E), do levantamento inicial de requisitos à validação final em pista.</li>
-                  <li><strong>Systems Engineering (V-Model):</strong> Integração do design de hardware com software embarcado (<strong>BSW/ASW em C/C++</strong>) e In-Vehicle Networking (<strong>IVN — CAN, UART, I2C, SPI</strong>) usando metodologias <strong>V-Model</strong> e conceitos ASPICE.</li>
-                  <li><strong>Tailored Agile Framework:</strong> Aplicação de metodologias <strong>SCRUM</strong> ao ciclo de vida de hardware e software automotivo, definindo milestones técnicos estritos (Design Freeze, testes em bancada) como critérios claros de progressão de sprint.</li>
-                  <li><strong>Validation & Problem Solving:</strong> Planejamento e execução de Design Verification Plans (<strong>DVP&R</strong>) para garantir confiabilidade elétrica sistêmica. Realização de testes em bancada e pista, executando Root Cause Analysis (RCA) estruturado usando <strong>8D, FTA, 5 Porquês e Ishikawa</strong>.</li>
-                  <li><strong>Technical Documentation:</strong> Desenvolvimento e padronização de documentação de engenharia, entregando esquemáticos E/E (wiring diagrams) e guias de integração. Garantia de rastreabilidade de requisitos e suporte sólido para operações de manufatura e manutenção.</li>
-                </ul>
+<li><strong>Technical Leadership & E/E Architecture:</strong> Liderança do desenvolvimento de sistemas embarcados e ECUs para veículos off-road. Coordenação completa da arquitetura Elétrico/Eletrônica (E/E), do levantamento inicial de requisitos à validação final em pista.</li>
+<li><strong>Systems Engineering (V-Model):</strong> Integração do design de hardware com software embarcado (<strong>BSW/ASW em C/C++</strong>) e In-Vehicle Networking (<strong>IVN — CAN, UART, I2C, SPI</strong>) usando metodologias <strong>V-Model</strong> e conceitos ASPICE.</li>
+<li><strong>Tailored Agile Framework:</strong> Aplicação de metodologias <strong>SCRUM</strong> ao ciclo de vida de hardware e software automotivo, definindo milestones técnicos estritos (Design Freeze, testes em bancada) como critérios claros de progressão de sprint.</li>
+</ul>
+<details class="exp-more"><summary>Ver mais detalhes (2)</summary>
+<ul class="exp-list">
+<li><strong>Validation & Problem Solving:</strong> Planejamento e execução de Design Verification Plans (<strong>DVP&R</strong>) para garantir confiabilidade elétrica sistêmica. Realização de testes em bancada e pista, executando Root Cause Analysis (RCA) estruturado usando <strong>8D, FTA, 5 Porquês e Ishikawa</strong>.</li>
+<li><strong>Technical Documentation:</strong> Desenvolvimento e padronização de documentação de engenharia, entregando esquemáticos E/E (wiring diagrams) e guias de integração. Garantia de rastreabilidade de requisitos e suporte sólido para operações de manufatura e manutenção.</li>
+</ul></details>
                 <div class="exp-tags">
                   <span class="tag">C/C++</span>
                   <span class="tag">CAN · UART · SPI · I2C</span>
@@ -2428,16 +2676,20 @@ a.node:hover { border-color: var(--accent); }
                   </div>
                   <div class="exp-period">Mai 2023 — Abr 2024 · 1 ano</div>
                 </div>
+                <p class="exp-lead">Desenvolvimento de ECUs, PCBs e firmware robustos para o ambiente off-road.</p>
                 <ul class="exp-list">
-                  <li><strong>ECU & Hardware Development:</strong> Design e desenvolvimento de Unidades de Controle Eletrônico (ECUs) e subsistemas embarcados para aplicações off-road, garantindo robustez e confiabilidade em ambientes adversos através de fundamentos de eletrônica automotiva, integração de componentes automotive-grade e interfaceamento de sensores.</li>
-                  <li><strong>Requirements & Functional Safety:</strong> Definição de requisitos técnicos para hardware e firmware, incluindo especificações elétricas, protocolos de In-Vehicle Networking, e implementação de estratégias de redundância alinhadas a conceitos de Functional Safety.</li>
-                  <li><strong>PCB Design:</strong> Design de layouts de PCB usando <strong>KiCad</strong>, aplicando boas práticas automotivas para segregação de sinais analógicos/digitais, implementação de plano de terra e roteamento otimizado para alta imunidade a ruído.</li>
-                  <li><strong>Embedded Software Engineering (BSW/ASW):</strong> Programação de firmware <strong>C/C++</strong> para microcontroladores <strong>ESP32 e STM32</strong>, desenvolvendo drivers BSW de baixo nível e Application Software (ASW). Uso de interrupções, circular buffers e state machines para garantir execução determinística e estabilidade das ECUs.</li>
-                  <li><strong>In-Vehicle Networking (IVN):</strong> Configuração e gerenciamento de arquiteturas de comunicação embarcada, implementando protocolos seriais (<strong>UART, SPI, I2C</strong>), redes <strong>CAN bus</strong> e conectividade wireless ponto-a-ponto para troca de dados segura e eficiente entre módulos distribuídos.</li>
-                  <li><strong>Bench & Vehicle Level Validation:</strong> Realização de testes de validação elétrica e funcional em nível de bancada (ECU) e campo (veículo). Uso de osciloscópios, multímetros e ferramentas de debug embarcado para validar performance e garantir robustez operacional.</li>
-                  <li><strong>Engineering Documentation (DVP&R):</strong> Desenvolvimento e padronização de documentação técnica, incluindo esquemáticos elétricos, fluxogramas de arquitetura e Design Verification Plan and Reports (<strong>DVP&R</strong>).</li>
-                  <li>Aplicação de conceitos de <strong>RTOS (FreeRTOS)</strong> à arquitetura de software das ECUs, explorando task scheduling, controle de timing e Inter-Process Communication (IPC) para execução determinística em tempo real.</li>
-                </ul>
+<li><strong>ECU & Hardware Development:</strong> Design e desenvolvimento de Unidades de Controle Eletrônico (ECUs) e subsistemas embarcados para aplicações off-road, garantindo robustez e confiabilidade em ambientes adversos através de fundamentos de eletrônica automotiva, integração de componentes automotive-grade e interfaceamento de sensores.</li>
+<li><strong>Requirements & Functional Safety:</strong> Definição de requisitos técnicos para hardware e firmware, incluindo especificações elétricas, protocolos de In-Vehicle Networking, e implementação de estratégias de redundância alinhadas a conceitos de Functional Safety.</li>
+<li><strong>PCB Design:</strong> Design de layouts de PCB usando <strong>KiCad</strong>, aplicando boas práticas automotivas para segregação de sinais analógicos/digitais, implementação de plano de terra e roteamento otimizado para alta imunidade a ruído.</li>
+</ul>
+<details class="exp-more"><summary>Ver mais detalhes (5)</summary>
+<ul class="exp-list">
+<li><strong>Embedded Software Engineering (BSW/ASW):</strong> Programação de firmware <strong>C/C++</strong> para microcontroladores <strong>ESP32 e STM32</strong>, desenvolvendo drivers BSW de baixo nível e Application Software (ASW). Uso de interrupções, circular buffers e state machines para garantir execução determinística e estabilidade das ECUs.</li>
+<li><strong>In-Vehicle Networking (IVN):</strong> Configuração e gerenciamento de arquiteturas de comunicação embarcada, implementando protocolos seriais (<strong>UART, SPI, I2C</strong>), redes <strong>CAN bus</strong> e conectividade wireless ponto-a-ponto para troca de dados segura e eficiente entre módulos distribuídos.</li>
+<li><strong>Bench & Vehicle Level Validation:</strong> Realização de testes de validação elétrica e funcional em nível de bancada (ECU) e campo (veículo). Uso de osciloscópios, multímetros e ferramentas de debug embarcado para validar performance e garantir robustez operacional.</li>
+<li><strong>Engineering Documentation (DVP&R):</strong> Desenvolvimento e padronização de documentação técnica, incluindo esquemáticos elétricos, fluxogramas de arquitetura e Design Verification Plan and Reports (<strong>DVP&R</strong>).</li>
+<li>Aplicação de conceitos de <strong>RTOS (FreeRTOS)</strong> à arquitetura de software das ECUs, explorando task scheduling, controle de timing e Inter-Process Communication (IPC) para execução determinística em tempo real.</li>
+</ul></details>
                 <div class="exp-tags">
                   <span class="tag">ESP32</span>
                   <span class="tag">STM32</span>
@@ -2490,6 +2742,7 @@ a.node:hover { border-color: var(--accent); }
           <div class="sysmap-foot">Fora do fluxo: <a href="#repo-avtest" data-jump="avtest">AV-Test</a> (cronometragem em pista via ESP-NOW) e <a href="#repo-audio" data-jump="audio">Análise de Áudio</a> (notebook de DSP).</div>
         </div>
 
+        <section class="cs" aria-labelledby="cs-h"><h3 id="cs-h" class="cs-title">// ESTUDOS DE CASO</h3><div class="cs-grid"><article class="cs-card"><div class="cs-top"><span class="cs-cat">Telemetria · Análise de dados</span><span class="cs-year">2025</span></div><h4>iLogger</h4><p class="cs-prob"><b>Problema:</b> Carregar, filtrar e analisar os dados de sensores capturados nas runs do veículo Baja SAE.</p><div class="cs-flow" role="list" aria-label="Arquitetura de iLogger"><span role="listitem">CSV (f1/f2)</span><span role="listitem">FilterEngine + cache SHA-256</span><span role="listitem">SignalProcessor · IntelligenceEngine</span><span role="listitem">Painéis · Exportação</span></div><p class="cs-res">Filtros digitais em tempo real, FFT, canais virtuais e exportação para Excel, PDF, JSON e CSV. Segundo o README, o pipeline é vetorizado e mantém a interface responsiva em runs de mais de 100.000 pontos.</p><p class="cs-stack">Python · PyQt6 · PyQtGraph · NumPy/SciPy</p><details class="cs-more"><summary>Decisões de engenharia e validação</summary><ul><li>Pipeline 100% vetorizado em NumPy/SciPy, sem loops Python sobre as amostras.</li><li>Cache thread-safe com hash SHA-256 da configuração de filtro, evitando reprocessamento.</li><li>Canais virtuais avaliados em sandbox restrito; downsampling no gráfico para runs longas.</li></ul><p class="cs-lim"><b>Validação documentada:</b> Os filtros e painéis foram descritos, mas o README não traz testes ou benchmarks.</p></details><a class="cs-link" href="https://github.com/DARXS/iLogger" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código e README</a></article><article class="cs-card"><div class="cs-top"><span class="cs-cat">Firmware · Telemetria</span><span class="cs-year">2025</span></div><h4>MPU-25</h4><p class="cs-prob"><b>Problema:</b> Levar a telemetria do veículo até a base e permitir depuração em tempo real.</p><div class="cs-flow" role="list" aria-label="Arquitetura de MPU-25"><span role="listitem">Sensores via CAN + GPS</span><span role="listitem">ESP32 (MPU)</span><span role="listitem">LoRa</span><span role="listitem">ESP32 receptor → cartão SD</span></div><p class="cs-res">Máquina de estados com buffer circular; pacote de rádio enviado a cada 1 s, GPS a cada 4 s; BLE devolve JSON de status; receptor grava CSV no SD.</p><p class="cs-stack">ESP32 · Arduino/PlatformIO · CAN · LoRa · BLE · FreeRTOS</p><details class="cs-more"><summary>Decisões de engenharia e validação</summary><ul><li>Tarefas FreeRTOS dedicadas por core; buffer circular com Ticker agenda GPS (4 s) e rádio (1 s).</li><li>LoRa para o link com a base e BLE só para depuração, devolvendo JSON de status.</li><li>Receptor separado grava CSV em SD, desacoplando a análise da transmissão.</li></ul><p class="cs-lim"><b>Validação documentada:</b> O README não documenta alcance do enlace, taxa de perda de pacotes nem testes em pista.</p></details><a class="cs-link" href="https://github.com/DARXS/MangueBaja_MPU-25" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código e README</a></article><article class="cs-card"><div class="cs-top"><span class="cs-cat">Firmware · Aquisição de dados</span><span class="cs-year">2024</span></div><h4>SCU-24</h4><p class="cs-prob"><b>Problema:</b> Registrar tudo o que passa na rede CAN sem que a latência do GPRS interfira no log.</p><div class="cs-flow" role="list" aria-label="Arquitetura de SCU-24"><span role="listitem">Rede CAN (ISR)</span><span role="listitem">Core 0: log em SD a 40 Hz</span><span role="listitem">Core 1: GPRS/MQTT a cada 1 s</span></div><p class="cs-res">Duas tarefas FreeRTOS fixadas em núcleos distintos isolam o logging crítico da comunicação remota.</p><p class="cs-stack">ESP32 · FreeRTOS · CAN · SIM800 · MQTT · OTA</p><details class="cs-more"><summary>Decisões de engenharia e validação</summary><ul><li>Recepção CAN por interrupção (canISR) para não perder pacotes.</li><li>Log em SD a 40 Hz no Core 0; GPRS/MQTT no Core 1, com buffer enviado a cada 1 s para economizar rede.</li><li>Módulo OTA incluído para atualizações futuras sem acesso físico.</li></ul><p class="cs-lim"><b>Validação documentada:</b> O README não traz testes de robustez do log nem métricas de transmissão.</p></details><a class="cs-link" href="https://github.com/DARXS/MangueBaja_SCU-24" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código e README</a></article><article class="cs-card"><div class="cs-top"><span class="cs-cat">Instrumentação · Cronometragem</span><span class="cs-year">2025</span></div><h4>AV-Test</h4><p class="cs-prob"><b>Problema:</b> Medir com precisão tempos de aceleração (30 m e 100 m) e velocidade final do veículo.</p><div class="cs-flow" role="list" aria-label="Arquitetura de AV-Test"><span role="listitem">Sensor 0 m (ECU + LCD + SD)</span><span role="listitem">Módulo 30 m (interrupção)</span><span role="listitem">Módulo 100 m (100 m e 101 m)</span><span role="listitem">ESP-NOW</span></div><p class="cs-res">Interface comum IModule e pacote único com message_id, que evita loops de retransmissão pela ponte opcional.</p><p class="cs-stack">ESP32 · ESP-NOW · Arduino/PlatformIO · LCD I2C · SD</p><details class="cs-more"><summary>Decisões de engenharia e validação</summary><ul><li>Interface única IModule: a função de cada módulo muda apenas pela constante MODE.</li><li>Pacote av_packet_t com message_id e cache na ponte, evitando loops de retransmissão.</li><li>Dois tempos consecutivos (100 m e 101 m) permitem calcular a velocidade final.</li></ul><p class="cs-lim"><b>Validação documentada:</b> O README não apresenta medições reais nem a precisão obtida.</p></details><a class="cs-link" href="https://github.com/DARXS/AV-Test" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código e README</a></article></div><p class="cs-note">Fonte: README de cada repositório. Diagramas simplificados, sem medições reais.</p></section>
         <div class="pf-bar" role="group" aria-label="Filtrar projetos">
           <button class="pf-chip active" data-filter="all" aria-pressed="true">Todos</button>
           <button class="pf-chip" data-filter="firmware" aria-pressed="false">Firmware embarcado</button>
@@ -2660,148 +2913,10 @@ a.node:hover { border-color: var(--accent); }
     <div class="skills-panel">
       <div class="container">
         <div class="section-label">// COMPETÊNCIAS TÉCNICAS</div>
-        <h2 class="section-title">Habilidades & Tecnologias</h2>
+        <h2 class="section-title">Engineering Stack</h2>
+        <p class="proj-lead">Competências agrupadas por domínio, cada uma ligada ao trabalho em que foi usada.</p>
 
-        <div class="skills-grid">
-          <!-- Automotive Quality -->
-          <div class="skill-cat">
-            <div class="skill-cat-header">
-              <i class="fas fa-car"></i>
-              <h3>Qualidade Automotiva & Diagnóstico</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">Infotainment & E/E Systems</span><span class="skill-pct">95%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="95"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">Root Cause Analysis (8D, 5Why, FTA)</span><span class="skill-pct">90%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">FMEA & Quality Engineering</span><span class="skill-pct">88%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">FOTA / AOTA / MOTA</span><span class="skill-pct">85%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Protocols & Diagnostic Tools -->
-          <div class="skill-cat">
-            <div class="skill-cat-header">
-              <i class="fas fa-network-wired"></i>
-              <h3>Protocolos & Ferramentas Diagnósticas</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">CAN / LIN Bus</span><span class="skill-pct">92%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="92"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">CANalyzer / CANdela / CDA</span><span class="skill-pct">88%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">UDS (ISO 14229) · DoIP</span><span class="skill-pct">85%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">DIAglyser / DIAnalyser</span><span class="skill-pct">82%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="82"></div></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Embedded Systems -->
-          <div class="skill-cat">
-            <div class="skill-cat-header">
-              <i class="fas fa-microchip"></i>
-              <h3>Sistemas Embarcados & Hardware</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">C / C++ (Embedded)</span><span class="skill-pct">90%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">ESP32 / STM32</span><span class="skill-pct">88%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">FreeRTOS</span><span class="skill-pct">82%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="82"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">KiCad / PCB Design</span><span class="skill-pct">75%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Data & Software -->
-          <div class="skill-cat">
-            <div class="skill-cat-header">
-              <i class="fas fa-chart-line"></i>
-              <h3>Software, Dados & Analytics</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">Python (Pandas, NumPy, Matplotlib)</span><span class="skill-pct">88%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">Power BI / Data Visualization</span><span class="skill-pct">85%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">MATLAB / Simscape</span><span class="skill-pct">75%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info"><span class="skill-name">Git / Linux</span><span class="skill-pct">80%</span></div>
-                <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tech Cloud -->
-        <div class="tech-cloud">
-          <div class="tech-cloud-title">// TECNOLOGIAS & FERRAMENTAS</div>
-          <div class="tech-grid">
-            <div class="tech-pill"><i class="fas fa-microchip" style="color:var(--accent)"></i> ESP32</div>
-            <div class="tech-pill"><i class="fas fa-microchip" style="color:var(--cyan)"></i> STM32</div>
-            <div class="tech-pill"><i class="fas fa-code" style="color:var(--accent)"></i> C++</div>
-            <div class="tech-pill"><i class="fas fa-code" style="color:var(--green)"></i> Python</div>
-            <div class="tech-pill"><i class="fas fa-wave-square" style="color:var(--accent)"></i> CAN Bus</div>
-            <div class="tech-pill"><i class="fas fa-wave-square" style="color:var(--accent2)"></i> LIN Bus</div>
-            <div class="tech-pill"><i class="fas fa-tools" style="color:var(--cyan)"></i> CANalyzer</div>
-            <div class="tech-pill"><i class="fas fa-tools" style="color:var(--cyan)"></i> CANdela</div>
-            <div class="tech-pill"><i class="fas fa-tools" style="color:var(--text-2)"></i> CDA</div>
-            <div class="tech-pill"><i class="fas fa-tools" style="color:var(--text-2)"></i> DIAglyser</div>
-            <div class="tech-pill"><i class="fas fa-broadcast-tower" style="color:var(--green)"></i> FreeRTOS</div>
-            <div class="tech-pill"><i class="fas fa-broadcast-tower" style="color:var(--accent)"></i> LoRa</div>
-            <div class="tech-pill"><i class="fas fa-map-marked-alt" style="color:var(--green)"></i> GPS</div>
-            <div class="tech-pill"><i class="fas fa-wifi" style="color:var(--cyan)"></i> ESP-NOW</div>
-            <div class="tech-pill"><i class="fas fa-chart-bar" style="color:var(--accent)"></i> Power BI</div>
-            <div class="tech-pill"><i class="fas fa-calculator" style="color:var(--cyan)"></i> MATLAB</div>
-            <div class="tech-pill"><i class="fas fa-project-diagram" style="color:var(--green)"></i> Simscape</div>
-            <div class="tech-pill"><i class="fab fa-git-alt" style="color:var(--accent)"></i> Git</div>
-            <div class="tech-pill"><i class="fab fa-linux" style="color:var(--text-1)"></i> Linux</div>
-            <div class="tech-pill"><i class="fas fa-database" style="color:var(--cyan)"></i> SQL</div>
-            <div class="tech-pill"><i class="fas fa-print" style="color:var(--green)"></i> KiCad</div>
-            <div class="tech-pill"><i class="fas fa-car-crash" style="color:var(--accent)"></i> SAE Standards</div>
-            <div class="tech-pill"><i class="fas fa-stethoscope" style="color:var(--green)"></i> DoIP</div>
-            <div class="tech-pill"><i class="fas fa-microchip" style="color:var(--accent)"></i> HIL</div>
-            <div class="tech-pill"><i class="fas fa-shield-alt" style="color:var(--cyan)"></i> ISO 26262</div>
-            <div class="tech-pill"><i class="fas fa-wifi" style="color:var(--accent)"></i> MQTT · BLE</div>
-            <div class="tech-pill"><i class="fas fa-microchip" style="color:var(--cyan)"></i> Mbed OS</div>
-            <div class="tech-pill"><i class="fas fa-code" style="color:var(--accent)"></i> PyQt6</div>
-          </div>
-        </div>
+        <div class="stack-list"><article class="stack-row"><h3><i class="fas fa-car" aria-hidden="true"></i> Automotive Systems</h3><p class="stack-tools">CAN/LIN · UDS (ISO 14229) sobre CAN e DoIP · HIL · FOTA/AOTA/MOTA · CANalyzer · CANdela · CDA · DIAglyser/DIAnalyser · ISO 26262</p><p class="stack-ev">Diagnóstico de ECUs multicore (Infotainment, IPC, TBM), análise de DTC e homologação de campanhas OTA. <a href="#" onclick="switchTab('experience'); return false;">Ver experiência →</a></p></article><article class="stack-row"><h3><i class="fas fa-microchip" aria-hidden="true"></i> Embedded Development</h3><p class="stack-tools">C/C++ · ESP32 · STM32 · FreeRTOS · Mbed OS · LoRa · BLE · ESP-NOW · MQTT · GPS</p><p class="stack-ev">Firmware de telemetria e aquisição de dados no Mangue Baja SAE: MPU-25, SCU-24 e AV-Test. <a href="#" onclick="switchTab('projects'); return false;">Ver projetos →</a></p></article><article class="stack-row"><h3><i class="fas fa-code" aria-hidden="true"></i> Software Engineering</h3><p class="stack-tools">Python (Pandas, NumPy, Matplotlib) · PyQt6 · MATLAB/Simscape · SQL · Git · Linux</p><p class="stack-ev">iLogger: aplicação desktop de análise de sinais com filtros, FFT e exportação. <a href="#" onclick="switchTab('projects'); return false;">Ver iLogger →</a></p></article><article class="stack-row"><h3><i class="fas fa-chart-bar" aria-hidden="true"></i> Data & Validation</h3><p class="stack-tools">Power BI (Power Query, DAX) · KPIs de garantia (PPM, FTY) · MTTR/MTBF · RCA, 8D, FMEA, FTA</p><p class="stack-ev">Dashboards de qualidade e análise de causa-raiz na Stellantis. <a href="#" onclick="switchTab('experience'); return false;">Ver experiência →</a></p></article><article class="stack-row"><h3><i class="fas fa-project-diagram" aria-hidden="true"></i> Electronics</h3><p class="stack-tools">KiCad / PCB · sensores · osciloscópio e multímetro · testes de bancada · CAN, UART, I2C, SPI</p><p class="stack-ev">Projeto de ECUs e PCBs e validação elétrica de bancada e veículo no Mangue Baja SAE. <a href="#" onclick="switchTab('experience'); return false;">Ver experiência →</a></p></article></div>
       </div>
     </div>
   </div>
@@ -2972,7 +3087,7 @@ a.node:hover { border-color: var(--accent); }
     <div class="contact-panel">
       <div class="container">
         <div class="section-label">// ENTRE EM CONTATO</div>
-        <h2 class="section-title">Vamos Conversar?</h2>
+        <h2 class="section-title">Vamos desenvolver a próxima solução.</h2>
 
         <div class="contact-grid">
           <div>
@@ -3094,6 +3209,7 @@ let countersDone = false;
 function initCounters() {
   if (countersDone) return;
   countersDone = true;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   document.querySelectorAll('.counter').forEach(el => {
     const target = +el.dataset.target;
     let cur = 0;
@@ -3279,7 +3395,7 @@ async function loadGitHub() {
 (function () {
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const _sw = window.switchTab;
-  window.switchTab = function (id) { _sw(id); window.revUp && window.revUp(); };
+  window.switchTab = function (id) { _sw(id); document.querySelectorAll('.tab-btn').forEach(function(b){ if (b.dataset.tab===id) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-current'); }); window.revUp && window.revUp(); };
 
   // Tacômetro: ponteiro com inércia; passe o mouse para acelerar
   const g = document.getElementById('gauge');
@@ -3476,5 +3592,7 @@ async function loadGitHub() {
   });
 })();
 </script>
+<script src="racing-v5.js"></script>
 </body>
+<script src="racing-v5.js"></script>
 </html>
