@@ -102,18 +102,19 @@ if (home) {
 }
 
 /* ───────── estado ───────── */
-const V = { kmh: 0, surge: 0, boosting: false, bs: 0, nos: 100 };
+const V = { kmh: 0, surge: 0, boosting: false, bs: 0, nos: 100, p: 0, laps: 0 };
+window.V5 = V;
 let mv = 0;
 addEventListener('pointermove', e => { if (e.pointerType === 'touch') return; mv += Math.abs(e.movementX || 0) + Math.abs(e.movementY || 0); }, { passive: true });
 function boost() {
   if (V.boosting || V.nos < 50) return;
-  V.nos -= 50; V.boosting = true; document.body.classList.add('nos'); window.revUp && window.revUp();
+  V.nos -= 50; V.boosting = true; V.surge = 1.4; document.body.classList.add('nos'); window.revUp && window.revUp();
   setTimeout(() => { document.body.classList.remove('nos'); V.boosting = false; }, 1600);
 }
 $('#cockpit').addEventListener('click', e => { e.stopPropagation(); boost(); });
 $('#cockpit').addEventListener('touchstart', e => { e.preventDefault(); e.stopPropagation(); boost(); }, { passive: false });
 addEventListener('keydown', e => {
-  if (e.key.toLowerCase() === 'n' && !/INPUT|TEXTAREA/.test(document.activeElement.tagName) && !e.metaKey && !e.ctrlKey && !e.altKey) boost();
+  if (!e.repeat && String(e.key || '').toLowerCase() === 'n' && !/INPUT|TEXTAREA/.test(document.activeElement.tagName) && !e.metaKey && !e.ctrlKey && !e.altKey) boost();
 });
 
 /* ───────── canvas: PCB + speed lines ───────── */
@@ -175,7 +176,7 @@ function hud(now) {
   const dt = Math.min(.1, (now - last) / 1000); last = now;
   const dy = Math.abs(scrollY - lastY); lastY = scrollY;
   V.bs += ((V.boosting ? 1 : 0) - V.bs) * .1;
-  const target = Math.min(180, dy * 6) + Math.min(70, mv * .6) + V.surge * 90 + V.bs * 130; mv = 0;
+  const target = Math.min(180, dy * 6) + Math.min(70, mv * .6) + V.surge * 90 + V.bs * 160; mv = 0;
   V.kmh += (target - V.kmh) * .12; V.surge *= .95;
   V.nos = Math.min(100, V.nos + 12 * dt);
   const k = Math.min(299, Math.round(V.kmh));
@@ -184,9 +185,11 @@ function hud(now) {
   el.nos.style.width = V.nos + '%';
   const d = document.documentElement, sc = d.scrollHeight - d.clientHeight, scrolls = sc > 80;
   const p = scrolls ? d.scrollTop / sc : Math.min(1, (now - lapStart) / 24000);
+  V.p = p;
   el.sec.forEach((s, i) => { const f = Math.max(0, Math.min(1, p * 3 - i)); s.style.setProperty('--p', f * 100 + '%'); s.classList.toggle('done', f >= 1); });
   if (p >= .985 && armed && now - lapStart > 1500) {
     lastLap = now - lapStart; best = best == null ? lastLap : Math.min(best, lastLap); armed = false;
+    V.laps++; V.last = lastLap; V.isBest = lastLap === best;
     el.b.textContent = fmt(best); V.surge = 1; el.ck.classList.add('lap'); setTimeout(() => el.ck.classList.remove('lap'), 800);
     if (!scrolls) { lapStart = now; armed = true; }
   }
@@ -195,10 +198,12 @@ function hud(now) {
 }
 let lf = 0;
 function loop(now) {
-  if (!document.hidden && (!MOB || now - lf > 30)) { lf = now; hud(now); paint(); }
+  try {
+    if (!document.hidden && (!MOB || now - lf > 30)) { lf = now; hud(now); if (!RM) paint(); }
+  } catch (err) { console.error('v5', err); }
   requestAnimationFrame(loop);
 }
-if (RM) paint(); else requestAnimationFrame(loop);
+paint(); requestAnimationFrame(loop);
 
 /* ───────── troca de aba: bandeira + decodificação do título ───────── */
 const flag = $('#flag');
